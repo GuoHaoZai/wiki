@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>在线测评学生登录</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<script src="../import_javaScript/jquery.min.js"></script>
+	<script src="../import_javaScript/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../import_javaScript/bootstrap-3.3.7-dist/css/bootstrap.css">
+<style>
+body{background-color: rgba(0, 0, 0, 1);margin: 0px;overflow: hidden;}
+a{color:#0078ff;}
+/*登录div的总界面*/
+#login{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	/*border: #000000 1px solid;*/
+	margin: 200px 550px;
+}
+/*登录界面的顶部设计*/
+#top_login{
+	width: 100%;
+	height: 70px;
+	background-color: rgba(0,0,0,0.5);
+}
+/*登录界面的中间部分设计*/
+#center_login{
+	width: 100%;
+	height: 260px;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+}
+/*登录界面的尾部设计*/
+#footer_login{
+	width: 100%;
+	height: 70px;
+	background-color: rgba(0,0,0,0.5);
+}
+/*表单下拉*/
+#user_top{
+	padding-top: 50px;
+}
+/*登录按钮样式调整*/
+#submit{
+	width: 77%;
+	margin-left: 33px;
+	padding-left: 50px;
+}
+#a_href{
+	text-decoration: none;
+}
+#b_href{
+	text-decoration: none;
+}
+/*账号，密码设计*/
+.user{
+	width: 100%;
+	padding-left: 25px;
+}
+/*点我注册，忘记密码颜色设计*/
+.footer_login_color{
+	color: white;
+}
+/*文字设计*/
+span{
+	font-size: 24px;
+	letter-spacing:16px;
+	line-height: 63px;
+	margin-left: 80px;
+	color: white;
+}
+a:hover{
+	color: #eea236;
+}
+
+</style>
+
+</head>
+<body>
+	<div id="login">
+		<div id="top_login">
+			<span>在线测评登录</span>
+		</div>
+		<div id="center_login">
+			<div id="user_top">
+				<!--<form action="" method="post">-->
+					<div class="row user">
+						<div class="col-md-3">
+							<label for="account" class="lead">账号：</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" id="account" name="username" placeholder="账号" class="account form-control "/><br />
+						</div>
+					</div>
+					<div class="row user">
+						<div class="col-md-3">
+							<label for="password" class="lead">密码：</label>
+						</div>
+						<div class="col-md-8">
+							<input type="password" id="password" name="password"  placeholder="密码" class="password form-control"/><br />
+							<br />
+						</div>
+					</div>
+					<input type="button"  value="登录" id="submit" class="btn btn-warning " onclick="login()" style="font-weight: 800;font-size: 20px;letter-spacing: 40px;"/>
+				<!--</form>-->
+			</div>
+		</div>
+		<div id="footer_login">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="" class="lead footer_login_color" id="b_href">点我注册</a>
+				</div>
+				<div class="col-md-4 col-md-push-4">
+					<a href="" class="lead footer_login_color" id="a_href">忘记密码</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../import_javaScript/three.min.js"></script>
+<script type="text/javascript">
+var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+
+var container;
+var camera, scene, renderer;
+
+var particles, particle, count = 0;
+
+var mouseX = 0, mouseY = 0;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+init();
+animate();
+
+function init() {
+
+	container = document.createElement( 'div' );
+	document.body.appendChild( container );
+
+	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.z = 1000;
+
+	scene = new THREE.Scene();
+
+	particles = new Array();
+
+	var PI2 = Math.PI * 2;
+	var material = new THREE.ParticleCanvasMaterial( {
+		
+ 		color: 0xffffff,
+		program: function ( context ) {
+
+			context.beginPath();
+			context.arc( 0, 0, 1, 0, PI2, true );
+			context.fill();
+
+		}
+
+	} );
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i ++ ] = new THREE.Particle( material );
+			particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+			particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+			scene.add( particle );
+
+		}
+
+	}
+
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	container.appendChild( renderer.domElement );
+
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+	//
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function onWindowResize() {
+
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+//
+
+function onDocumentMouseMove( event ) {
+
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
+
+}
+
+function onDocumentTouchStart( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+function onDocumentTouchMove( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+//
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	render();
+
+
+}
+
+function render() {
+
+	camera.position.x += ( mouseX - camera.position.x ) * .05;
+	camera.position.y += ( - mouseY - camera.position.y ) * .05;
+	camera.lookAt( scene.position );
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i++ ];
+			particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+			particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+
+		}
+
+	}
+
+	renderer.render( scene, camera );
+
+	count += 0.1;
+
+}
+/////////////////////////////////////////////////////////////////////////////////
+function login() {
+    var user = {
+        "username" :$("input[name='username']").val(),
+        "password" :$("input[name='password']").val()
+    };
+	// alert(user.password+"    "+user.username)
+// Jquery Ajax请求
+    $.ajax({
+        url : "/user/login",
+        type : "POST",
+        async : true,
+        contentType : "application/json",
+        data : JSON.stringify(user),
+        dataType : 'json',
+        success : function(data) {
+            alert(data)
+        },
+		error : function (data) {
+			alert(data)
+        }
+    });
+}
+</script>
+</body>
+</html>

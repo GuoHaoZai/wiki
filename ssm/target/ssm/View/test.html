@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="lib/vue.js" ></script>
+<script src="lib/axios.js"></script>
+<script src="lib/jquery.js"></script>
+<body>
+
+    <form action="/fileUpload" method="post" enctype="multipart/form-data">
+        <input type="file" name="multipartFile" />
+        <input type="submit" name="提交"/>
+    </form>
+    <br/>
+    <button onclick="posttest()">发送ajax请求</button>
+    <button onclick="gettest()">得到ajax数据</button>
+    <button onclick="postandgettest()">交互ajax请求</button>
+
+    <script type="text/javascript">
+        function posttest() {
+            var json = {
+                "id" : "3111",
+                "name" : "guohao"
+            };
+
+// Jquery Ajax请求
+            $.ajax({
+                url : "/posttest",
+                type : "POST",
+                async : true,
+                contentType : "application/json",
+                data : JSON.stringify(json),
+                dataType : 'json',
+                success : function(data) {
+                    alert(data)
+                }
+            });
+        }
+        function gettest() {
+// Jquery Ajax请求
+            $.ajax({
+                url : "/gettest",
+                type : "GET",
+                async : true,
+                contentType : "application/json",
+                success : function(data) {
+                    alert(data)
+                }
+            });
+        }
+        function postandgettest() {
+            var json = {
+                "id" : 111,
+                "name" : "guohao"
+            };
+            alert(JSON.stringify(json))
+// Jquery Ajax请求
+            $.ajax({
+                url : "/postandgettest",
+                type : "POST",
+                async : true,
+                contentType : "application/json",
+                data : JSON.stringify(json),
+                dataType : 'json',
+                success : function(data) {
+                    alert(data)
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
