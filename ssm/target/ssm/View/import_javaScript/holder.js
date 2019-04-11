@@ -176,7 +176,7 @@ License:  MIT
 
 
     // Date.now() is supported everywhere except IE8. For IE8 we use the Date.now polyfill
-    //   github.com/Financial-Times/polyfill-service/blob/master/polyfills/Date.now/polyfill.js
+    //   github.com/Financial-Times/polyfill-nuc.service/blob/master/polyfills/Date.now/polyfill.js
     // as Safari 6 doesn't have support for NavigationTiming, we use a Date.now() timestamp for relative values
 
     // if you want values similar to what you'd get with real perf.now, place this towards the head of the page
@@ -1549,7 +1549,7 @@ License:  MIT
                     ONREADYSTATECHANGE = "onreadystatechange",
                     REMOVEEVENTLISTENER = "removeEventListener",
 
-                    // W3C Event model
+                    // W3C Event nuc.model
                     w3c = ADDEVENTLISTENER in doc,
                     _top = FALSE,
 
@@ -1621,7 +1621,7 @@ License:  MIT
                     // A fallback to window.onload, that will always work
                     win[ADDEVENTLISTENER]( LOAD, completed, FALSE );
 
-                    // If IE event model is used
+                    // If IE event nuc.model is used
                 } else {
                     // Ensure firing before onload, maybe late but safe also for iframes
                     doc[ATTACHEVENT]( ONREADYSTATECHANGE, completed );

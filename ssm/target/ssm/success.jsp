@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/download?fileName=5a26687d0001ca2712300718.png" >success</a>
+<h1>success</h1>
 </body>
 </html>

@@ -1,30 +1,38 @@
 package nuc.controller;
 
-import nuc.model.Uek_privilege_user;
-import nuc.service.serviceImpl.UserServiceImpl;
+import nuc.model.PO;
+import nuc.model.User;
+import nuc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+@ResponseBody
 @Controller
-@RequestMapping(value = "user")
+@RequestMapping(value = "/user")
 public class UserController {
 
     @Autowired
-    UserServiceImpl userService;
+    private UserService userService;
 
-    @RequestMapping(value = "login",method = {RequestMethod.POST,RequestMethod.GET})
-    public @ResponseBody int login(@RequestBody Uek_privilege_user uek_privilege_user, HttpServletRequest request){
-        if(userService.isExist(uek_privilege_user)){
-            request.getSession().setAttribute("username", uek_privilege_user.getUsername());
-            return 1;
+    @RequestMapping(value = "/login")
+    public PO login(@RequestBody User user, HttpSession session){
+        PO po = new PO();
+        Object o = userService.login(user);
+        if (o == null){
+            po.setStatus(300);
+            po.setMessage("该用户不存在");
         }else{
-            return 0;
+            session.setAttribute("user",o );
+            po.setObject(o);
+            po.setStatus(200);
+            po.setMessage("ok");
         }
+        return po;
     }
+
 }

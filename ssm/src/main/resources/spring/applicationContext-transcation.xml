@@ -32,7 +32,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* nuc.service.serviceImpl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* nuc.service.*.*(..))"/>
     </aop:config>
 
 </beans>

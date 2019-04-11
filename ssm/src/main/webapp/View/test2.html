@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/vue.js" ></script>
+    <script src="lib/axios.js"></script>
+    <script src="lib/vue-resource.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" v-nuc.model="user.username" placeholder="账号" />
+        <input type="text" v-nuc.model="user.password" placeholder="密码" />
+        <button @click="sub">提交</button>
+    </div>
+    <script type="text/javascript">
+
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                user:{
+                    username:"",
+                    password:""
+                }
+            },
+            methods:{
+                sub() {
+                    this.$http.post('/student/getQuestion',JSON.stringify(this.user),
+                        {emulateJSON:true}
+                    ).then(
+                        (res)=>{
+                            console.log(res)
+                        }
+                        ,(res)=>{
+                            console.log(res)
+                        });
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

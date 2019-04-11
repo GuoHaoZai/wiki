@@ -20,6 +20,14 @@
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>
 
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="nuc.interceptor.HttpResponseInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!--批量扫描包-->
     <context:component-scan base-package="nuc.controller"/>
 
