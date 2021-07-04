@@ -143,6 +143,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/full-screen</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/manager</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -189,6 +191,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Draft of 'Tiddly语法'</li>
+
 <li>Tiddly高级</li>
 
 <li>Tiddly语法</li>
@@ -211,6 +215,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20210611060644582" modified="20210611060655442" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/full-screen">
 <pre>hide</pre>
+</div>
+<div created="20210629020024769" modified="20210629020024769" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/manager">
+<pre>show</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23">
 <pre>{
@@ -14016,7 +14023,7 @@ Error message and password prompt
 <div created="20210611061229090" modified="20210611061229090" title="$:/state/plugin-info--467292644-$:/languages/zh-Hans---1911566375">
 <pre>contents</pre>
 </div>
-<div created="20210611060630461" modified="20210627163333458" title="$:/state/search-list/selected-item--874113614">
+<div created="20210611060630461" modified="20210629135827619" title="$:/state/search-list/selected-item--874113614">
 <pre>Tiddly高级-primaryList</pre>
 </div>
 <div created="20210611055715386" modified="20210611055715386" title="$:/state/showeditpreview">
@@ -14037,13 +14044,13 @@ Error message and password prompt
 <div created="20210611060710894" modified="20210611061246917" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210611033729353" modified="20210611061333144" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20210611033729353" modified="20210629020021628" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210627163333730" list="Tiddly高级" modified="20210627163333730" title="$:/StoryList">
+<div created="20210629135812166" list="Tiddly高级 [[Draft of 'Tiddly语法']]" modified="20210629135827911" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -14155,12 +14162,105 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="郭灏" created="20210611033730547" modified="20210627163345066" tags="tiddly" title="Tiddly高级" type="text/vnd.tiddlywiki">
+<div created="20210611060503371" draft.of="Tiddly语法" draft.title="Tiddly语法" modified="20210629135814962" tags="tiddly" title="Draft of 'Tiddly语法'">
+<pre>''加粗''
+//斜体//
+__下划线__
+~~删除线~~
+
+文字^^上角标^^
+文字,,下角标,,
+
+短破折 -- 线
+长破折 --- 线
+
+---
+分割线
+
+`代码`
+
+``在代码中使用英文“引号”的方法``
+
+```java
+public static void main(){
+    System.out.println(&quot;Hello World!!!&quot;);
+}
+```
+
+&quot;&quot;&quot;
+强制
+换行
+&quot;&quot;&quot;
+
+实际上在 TiddlyWiki 里正常换行要打两次回车
+
+&lt;&lt;&lt;
+引用
+&lt;&lt;&lt;
+
+&gt; 引用
+&gt;&gt; 中的又一
+&gt;&gt;&gt; 个引用
+
+!一级标题
+!!二级标题
+!!!三级标题
+
+* 无序列表
+** 无序列表中的复合列表
+
+# 有序列表
+## 有序列表的复合列表
+
+;术语
+:定义
+
+# 混合
+#* 列表
+#;你想
+#:怎样
+#&gt;就怎样
+
+!.h1-class.large CSS类可以这样使用
+
+[[引用的站内条目标题]]
+
+[[自定义显示的文字|引用的站内条目标题]]
+
+IsLinkOmg（自动驼峰链接）
+
+~IsLinkOmg（取消自动驼峰链接）
+
+直接显示链接：http://tiddlywiki.com 
+[[自定义显示文字|http://tiddlywikicom]]
+不显示链接只显示纯文字： ~http://not.alink.com
+
+本地链接：
+file:///c:/Windows/foo
+
+相对链接：
+[ext[a]] 打开就是 tiddlywiki所在路径/a
+
+[ext[自定义显示内容|实际链接]]
+
+图片：
+
+[img[http://www.tiddlywiki.com/favicon.ico]]
+
+[img[example | http://www.tiddlywiki.com/favicon.ico]]
+
+[img width=100 [http://www.tiddlywiki.com/favicon.ico]]
+
+[img class=&quot;tc-image&quot; [http://www.tiddlywiki.com/favicon.ico]]</pre>
+</div>
+<div author="郭灏" created="20210611033730547" modified="20210629135841544" tags="tiddly" title="Tiddly高级" type="text/vnd.tiddlywiki">
 <pre>tiddly设置 https://ssine.ink/posts/tiddlywiki-setup/
 
 http://blog.dimpurr.com/tiddly-wiki/
 
-https://meihaobiji.com/jiaoCheng-TiddlyWiki.html</pre>
+https://meihaobiji.com/jiaoCheng-TiddlyWiki.html
+
+宏定义：https://tiddlywiki.com/static/Macro%2520Definitions%2520in%2520WikiText.html</pre>
 </div>
 <div created="20210611060503371" modified="20210611061453153" tags="tiddly" title="Tiddly语法">
 <pre>''加粗''

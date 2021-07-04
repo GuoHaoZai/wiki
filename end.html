@@ -150,7 +150,21 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
+
+<li>$:/plugins/telmiger/Clipboard</li>
+
+<li>$:/plugins/telmiger/Clipboard/cb</li>
+
+<li>$:/plugins/telmiger/details</li>
+
+<li>$:/plugins/telmiger/FlippyCards</li>
+
+<li>$:/plugins/telmiger/ReaderMode</li>
+
+<li>$:/plugins/tobibeer/preview</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -159,6 +173,8 @@ Error message and password prompt
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab/moresidebar-1850697562</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
@@ -171,6 +187,10 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>huntaway</li>
+
+<li>New Tiddler</li>
+
+<li>Untitled</li>
 
 </ul>
 </p>
@@ -10177,8 +10197,869 @@ Error message and password prompt
 <div created="20210613064848269" modified="20210613064848269" title="$:/DefaultTiddlers">
 <pre></pre>
 </div>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/plugins/telmiger/ReaderMode]]</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div author="Thomas Elmiger" core-version="5.1.13" created="20170216203601360" description="Clipboard" list="readme settings" modified="20170917220546191" name="Editor Clipboard" plugin-type="plugin" source="https://tid.li/tw5/plugins.html" title="$:/plugins/telmiger/Clipboard" type="application/json" version="0.4.5">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb": {
+            "created": "20170214204617746",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$reveal state=\"$:/plugins/telmiger/Clipboard/settings/show\" type=\"match\" text=\"yes\" tag=\"span\"&gt;\n{{$:/plugins/telmiger/Clipboard/icons/fold}}\n&lt;$action-setfield $tiddler=\"$:/plugins/telmiger/Clipboard/settings/show\" $value=\"no\"/&gt;\n&lt;/$reveal&gt;\n&lt;$reveal state=\"$:/plugins/telmiger/Clipboard/settings/show\" type=\"nomatch\" text=\"yes\" tag=\"span\"&gt;\n{{$:/plugins/telmiger/Clipboard/icons/unfold}}\n&lt;$action-setfield $tiddler=\"$:/plugins/telmiger/Clipboard/settings/show\" $value=\"yes\"/&gt;\n&lt;/$reveal&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb",
+            "tags": "$:/tags/EditorToolbar Clipboard",
+            "shortcuts": "((clipboard))",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917211104268",
+            "icon": "$:/plugins/telmiger/Clipboard/icons/unfold",
+            "description": "Show/Hide clipboard",
+            "custom-icon": "yes",
+            "condition": "[&lt;targetTiddler&gt;]",
+            "caption": "Clipboard",
+            "button-classes": "tc-text-editor-toolbar-item-start-group te-cb-btn"
+        },
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-dropdown": {
+            "created": "20170214221240856",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;div class=\"tc-text-editor-toolbar-clipboard\"&gt;\n&lt;$set name=\"clipboard\" filter=\"\"\"[[$:/plugins/telmiger/Clipboard/cb]get[text]]\"\"\" value=\"{{$:/plugins/telmiger/Clipboard/cb}}\" emptyValue=\"Clipboard is empty.\"&gt;\n\n&lt;&lt;clipboard&gt;&gt;\n\n&lt;/$set&gt;\n&lt;/div&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-dropdown",
+            "tags": "Clipboard",
+            "modified": "20170216202249855",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert": {
+            "created": "20170215174235845",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"replace-selection\"\n\ttext={{$:/plugins/telmiger/Clipboard/cb}}\n/&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert",
+            "tags": "$:/tags/EditorToolbar Clipboard",
+            "shortcuts": "((clipboard-insert-text))",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917210407689",
+            "icon": "$:/plugins/telmiger/Clipboard/icons/clip",
+            "description": "Insert text from clipboard",
+            "condition": "[&lt;targetTiddler&gt;]",
+            "caption": "Insert text from clipboard",
+            "button-classes": "te-cb-btn"
+        },
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-link": {
+            "created": "20170215221611123",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$wikify name=\"cbTitle\" text={{$:/plugins/telmiger/Clipboard/cb!!te-cb-title}}&gt;\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"replace-selection\"\n\ttext=&lt;&lt;cbTitle&gt;&gt;\n/&gt;\n\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"wrap-selection\"\n\tprefix=\"[[\"\n\tsuffix=\"]]\"\n/&gt;\n&lt;/$wikify&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-link",
+            "tags": "$:/tags/EditorToolbar Clipboard",
+            "shortcuts": "((clipboard-insert-title-link))",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917210428939",
+            "icon": "$:/plugins/telmiger/Clipboard/icons/link",
+            "description": "Insert clipboard title as link",
+            "condition": "[&lt;targetTiddler&gt;]",
+            "caption": "Insert clipboard title as link",
+            "button-classes": "te-cb-btn"
+        },
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-transclude": {
+            "created": "20170215230349818",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$wikify name=\"cbTitle\" text={{$:/plugins/telmiger/Clipboard/cb!!te-cb-title}}&gt;\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"replace-selection\"\n\ttext=&lt;&lt;cbTitle&gt;&gt;\n/&gt;\n\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"wrap-selection\"\n\tprefix=\"{{\"\n\tsuffix=\"}}\"\n/&gt;\n&lt;/$wikify&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-transclude",
+            "tags": "$:/tags/EditorToolbar Clipboard",
+            "shortcuts": "((clipboard-insert-title-transclude))",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917210521487",
+            "icon": "$:/plugins/telmiger/Clipboard/icons/transclude",
+            "description": "Insert clipboard title as transclusion",
+            "condition": "[&lt;targetTiddler&gt;]",
+            "caption": "Insert clipboard title as transclusion",
+            "button-classes": "te-cb-btn"
+        },
+        "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-preview": {
+            "created": "20170214223304030",
+            "creator": "Thomas Elmiger",
+            "text": "",
+            "title": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-preview",
+            "tags": "$:/tags/EditorToolbar Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917211720649",
+            "list-after": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb",
+            "icon": "$:/plugins/telmiger/Clipboard/icons/file",
+            "dropdown": "$:/plugins/telmiger/Clipboard/EditorToolbar/cb-dropdown",
+            "description": "Show/Hide clipboard preview",
+            "condition": "[&lt;targetTiddler&gt;]",
+            "caption": "Show clipboard preview",
+            "button-classes": "te-cb-btn",
+            "shortcuts": "((clipboard-preview))"
+        },
+        "$:/plugins/telmiger/Clipboard/EditTemplate": {
+            "text": "&lt;$reveal type=\"match\" text=\"yes\" state=\"$:/plugins/telmiger/Clipboard/settings/show\" class=\"te-cb-clipboard\" tag=\"div\"&gt;\n&lt;$reveal type=\"match\" text=\"yes\" state=\"$:/plugins/telmiger/Clipboard/settings/show-text\"&gt;\n   &lt;$edit-text tiddler=\"$:/plugins/telmiger/Clipboard/cb\" placeholder=\"Clipboard\" default=\"This is your clipboard.\" rows=\"2\" minHeight=\"2em\" class=\"te-cb-edittext\"/&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" text=\"yes\" state=\"$:/plugins/telmiger/Clipboard/settings/show-list\"&gt;\n   &lt;$edit-text tiddler=\"$:/plugins/telmiger/Clipboard/cb\" field=\"list\" placeholder=\"Title Clipboard\" default=\"Title Clipboard\" rows=\"1\" minHeight=\"1em\" class=\"te-cb-edittext\"/&gt;\n&lt;/$reveal&gt;\n&lt;/$reveal&gt;\n\n&lt;!--\nShow the clipboard\n--&gt;",
+            "title": "$:/plugins/telmiger/Clipboard/EditTemplate",
+            "tags": "$:/tags/EditTemplate Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20171225170827044",
+            "list-after": "$:/core/ui/EditTemplate/tags",
+            "creator": "Thomas Elmiger",
+            "created": "20170214212009656"
+        },
+        "$:/plugins/telmiger/Clipboard/icon": {
+            "text": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64.003\" height=\"64.003\" viewBox=\"-500.5 395.5 64.003 64.003\"&gt;&lt;path fill=\"#ddd\" d=\"M-468.5 396.5l26.426 15.5v31l-26.425 15.5-26.426-15.5v-31l26.427-15.5z\"/&gt;&lt;path fill=\"#FFF\" d=\"M-485.996 419.088h34.99v16.824h-34.99z\"/&gt;&lt;path fill=\"#E2001A\" d=\"M-468.5 405.5c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22-9.85-22-22-22zm13.11 21.637c-1.022.682-2.674 1.023-4.954 1.023h-2.838c-1.505 0-2.598.3-3.28.9-.68.6-1.22 1.804-1.622 3.615 0 0-.063.526-.178.526s-.13-.31-.184-.562c-.056-.263-.14-.59-.256-.977-.224-.758-.447-1.332-.67-1.72-.27-.482-.613-.87-1.024-1.165-.412-.294-.883-.47-1.413-.528l-.74-.088h-3.637c-2.178 0-3.796-.343-4.855-1.024-1.764-1.12-2.71-3.24-2.842-6.357-.01-.25 0-.48.047-.772h.208c.142 1.41 1.304 2.502 2.158 3.274.853.77 2.222 1.155 4.104 1.155h3.3c1.896 0 3.28.436 4.158 1.306.79.786 1.31 2.017 1.56 3.69.028.183.012.263.064.263.053 0 .04-.09.06-.278.253-2.173 1.094-3.627 2.522-4.363.88-.46 2.28-.676 4.196-.652l2.257.035c1.527.023 2.814-.278 3.86-.908 1.046-.63 2.285-1.803 2.425-3.52h.21c.065.17.057.56.045.828-.13 3.105-1.023 5.206-2.68 6.3z\"/&gt;&lt;/svg&gt;",
+            "type": "image/svg+xml",
+            "title": "$:/plugins/telmiger/Clipboard/icon",
+            "tags": "",
+            "modified": "20171217214934904",
+            "created": "20170215233105652"
+        },
+        "$:/plugins/telmiger/Clipboard/settings": {
+            "created": "20170214201824205",
+            "creator": "Thomas Elmiger",
+            "text": "!! Settings\n!!! Editor: Show Clipboard Fields\n&lt;div class=\"te-settings-list\"&gt;\n\n* &lt;$checkbox tiddler=\"$:/plugins/telmiger/Clipboard/settings/show\" field=\"text\" checked=\"yes\" unchecked=\"no\"&gt; Show clipboard&lt;/$checkbox&gt;\n** &lt;$checkbox tiddler=\"$:/plugins/telmiger/Clipboard/settings/show-text\" field=\"text\" checked=\"yes\" unchecked=\"no\"&gt; text field&lt;/$checkbox&gt;\n** &lt;$checkbox tiddler=\"$:/plugins/telmiger/Clipboard/settings/show-list\" field=\"text\" checked=\"yes\" unchecked=\"no\"&gt; title clipboard&lt;/$checkbox&gt;\n\n&lt;/div&gt;\n\n!!! Editor Toolbar: Activate Buttons for the Clipboard\n&lt;div class=\"te-settings-list\"&gt;\n\n* &lt;$checkbox tiddler=\"$:/config/EditorToolbarButtons/Visibility/$:/plugins/telmiger/Clipboard/EditorToolbar/cb\" field=\"text\" checked=\"show\" unchecked=\"hide\" default=\"show\"&gt; fold/unfold&lt;/$checkbox&gt;\n* &lt;$checkbox tiddler=\"$:/config/EditorToolbarButtons/Visibility/$:/plugins/telmiger/Clipboard/EditorToolbar/cb-preview\" field=\"text\" checked=\"show\" unchecked=\"hide\" default=\"show\"&gt; clipboard preview popup&lt;/$checkbox&gt;\n* &lt;$checkbox tiddler=\"$:/config/EditorToolbarButtons/Visibility/$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert\" field=\"text\" checked=\"show\" unchecked=\"hide\" default=\"show\"&gt; insert text&lt;/$checkbox&gt;\n* &lt;$checkbox tiddler=\"$:/config/EditorToolbarButtons/Visibility/$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-link\" field=\"text\" checked=\"show\" unchecked=\"hide\" default=\"show\"&gt; insert title as link&lt;/$checkbox&gt;\n* &lt;$checkbox tiddler=\"$:/config/EditorToolbarButtons/Visibility/$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-transclude\" field=\"text\" checked=\"show\" unchecked=\"hide\" default=\"show\"&gt; insert title as transclusion&lt;/$checkbox&gt;\n\n&lt;/div&gt;\n\n!!! Editor Title: Show Copy-Button\n&lt;div class=\"te-settings-list\"&gt;\n\n* &lt;$checkbox tiddler=\"$:/plugins/telmiger/Clipboard/settings/title-button\" field=\"text\" checked=\"yes\" unchecked=\"no\"&gt; Show copy-title button&lt;/$checkbox&gt;\n\n&lt;/div&gt;\n\n&lt;$button message=\"tm-save-wiki\" param={{$:/config/SaveWikiButton/Template}} tooltip={{$:/language/Buttons/SaveWiki/Hint}} aria-label={{$:/language/Buttons/SaveWiki/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;span class=\"tc-dirty-indicator\"&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\"&gt;\n{{$:/core/images/save-button}} {{$:/language/Buttons/SaveWiki/Hint}}\n&lt;/$list&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;&lt;$text text={{$:/language/Buttons/SaveWiki/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/span&gt;\n&lt;/$button&gt;\n",
+            "title": "$:/plugins/telmiger/Clipboard/settings",
+            "tags": "Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170216202713718"
+        },
+        "$:/plugins/telmiger/Clipboard/settings/show": {
+            "created": "20170215233218443",
+            "text": "yes",
+            "title": "$:/plugins/telmiger/Clipboard/settings/show",
+            "modified": "20171225171517804"
+        },
+        "$:/plugins/telmiger/Clipboard/settings/show-list": {
+            "text": "yes",
+            "title": "$:/plugins/telmiger/Clipboard/settings/show-list",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170215205859173",
+            "creator": "Thomas Elmiger",
+            "created": "20170215203943180"
+        },
+        "$:/plugins/telmiger/Clipboard/settings/show-text": {
+            "text": "yes",
+            "title": "$:/plugins/telmiger/Clipboard/settings/show-text",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170215221111986",
+            "creator": "Thomas Elmiger",
+            "created": "20170215221111986"
+        },
+        "$:/plugins/telmiger/Clipboard/settings/title-button": {
+            "text": "yes",
+            "title": "$:/plugins/telmiger/Clipboard/settings/title-button",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170215221158098",
+            "creator": "Thomas Elmiger",
+            "created": "20170215211123226"
+        },
+        "$:/plugins/telmiger/Clipboard/style/cb.css": {
+            "text": "/* buttons */\n\n.tc-editor-toolbar button.te-cb-btn, button.te-cb-title {\n\tbackground-color: {{$:/plugins/telmiger/Clipboard/style/colors##button-background}};\n}\n\n.tc-editor-toolbar button.te-cb-btn:hover, button.te-cb-title:hover {\n\tbackground-color: {{$:/plugins/telmiger/Clipboard/style/colors##button-background-hover}};\n}\n\n.te-cb-title:hover {\n\tfill: #ffffff;\n}\n\n/* icons */\n\n.te-rotate-icon svg {\n\ttransform: rotate(180deg);\n}\n\n/* readme */\n\n.te-btn-list svg {\n\tmax-height: 1em;\n}\n\n.te-btn-list li {\n\tmargin-bottom: 0.5em;\n\tlist-style: none;\n\tmargin-left: 0em;\n\ttext-indent: -2.25em;\n}\n\n/* preview */\n\n.tc-text-editor-toolbar-clipboard {\n\tmax-width: 40em;\n\twhite-space: initial;\n}\n\n.tc-text-editor-toolbar-clipboard textarea {\n\twidth: 100%;\n}\n\n/* settings */\n\n.te-settings-list ul {\n\tlist-style: none;\n\tmargin-left: 0;\n\tpadding-left: 1.25em;\n\tline-height: 2;\n}\n\n/* editor */\n\n.tc-edit-tags {\n\tmargin-bottom: 1rem;\n}\n\n.te-cb-clipboard {\n\tmargin-bottom: .5rem;\n}\n\nbutton.te-cb-title {\n\tposition: absolute;\n\tright: 1rem;\n\tmargin-top: -.875rem;\n\tpadding-bottom: .25rem;\n\twidth: 2rem;\n\theight: 2rem;\n\tfont-size: 1.33em;\n\tfill: &lt;&lt;colour tiddler-controls-foreground-selected&gt;&gt;;\n\tborder-radius: .5rem;\n\ttext-align: center;\n}\n\n@media (min-width: 30em) {\n\tbutton.te-cb-title { right: .125rem; margin-top: -3.25rem; }\n}\n@media (min-width: 42em) {\n\tbutton.te-cb-title { right: 1rem; margin-top: -3.25rem; }\n}\n\n.te-cb-edittext {\n\twidth: 100%;\n\tmargin-bottom: .5rem;\n\tpadding: .5rem;\n\tborder: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;\n}\n\n.te-cb-select-title {\n\tmargin-top: .5rem;\n\tmargin-bottom: .5rem;\n\tfont-size: .875rem;\n}\n\n.tc-btn-invisible.te-cb-reset-titles {\n\tpadding-left: .5rem;\n\tfont-size: 1rem;\n}",
+            "title": "$:/plugins/telmiger/Clipboard/style/cb.css",
+            "tags": "$:/tags/Stylesheet Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20171225171922163",
+            "creator": "Thomas Elmiger",
+            "created": "20170215224423410"
+        },
+        "$:/plugins/telmiger/Clipboard/style/colors": {
+            "text": "button-background: #f3e4bb\nbutton-background-hover: #c8b992",
+            "type": "application/x-tiddler-dictionary",
+            "title": "$:/plugins/telmiger/Clipboard/style/colors",
+            "tags": "Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170215225942804",
+            "creator": "Thomas Elmiger",
+            "created": "20170215224015656"
+        },
+        "$:/plugins/telmiger/Clipboard/TitleTemplate": {
+            "text": "\\define draft-title() [&lt;currentTiddler&gt;get[draft.title]]\n\\define draft-title-text() {{!!draft.title}}\n\n&lt;$reveal type=\"match\" text=\"yes\" state=\"$:/plugins/telmiger/Clipboard/settings/title-button\"&gt;\n&lt;$button tooltip={{$:/plugins/telmiger/Clipboard/TitleTemplate!!description}} class=\"tc-btn-invisible te-cb-btn te-cb-title\"&gt;\n&lt;$wikify name=\"d-title\" text=&lt;&lt;draft-title-text&gt;&gt;&gt;\n&lt;$action-setfield $tiddler=\"$:/plugins/telmiger/Clipboard/cb\" $field=\"te-cb-title\" $value=&lt;&lt;d-title&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;$action-listops $tiddler=\"$:/plugins/telmiger/Clipboard/cb\" $field=\"te-cb-titles\" $subfilter=&lt;&lt;draft-title&gt;&gt;/&gt;\n{{$:/plugins/telmiger/Clipboard/icons/clone}}\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n&lt;!--\nAdd the draft title to the title clipboard/to the titles list\n--&gt;",
+            "title": "$:/plugins/telmiger/Clipboard/TitleTemplate",
+            "tags": "$:/tags/EditTemplate Clipboard",
+            "shortcuts": "((clipboard-copy-title))",
+            "modifier": "Thomas Elmiger",
+            "modified": "20171112000818423",
+            "list-before": "$:/core/ui/EditTemplate/tags",
+            "icon": "{{$:/plugins/telmiger/Clipboard/icons/clone}}",
+            "description": "Copy tiddler title to the clipboard’s title list",
+            "creator": "Thomas Elmiger",
+            "created": "20170215210047960",
+            "caption": "Copy to clipboard"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/clip": {
+            "created": "20170216193941574",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/core/images/import-button}}",
+            "title": "$:/plugins/telmiger/Clipboard/icons/clip",
+            "tags": "",
+            "modified": "20170216193952593",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/clone": {
+            "created": "20170216195905987",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;span class=\"te-rotate-icon\"&gt;{{$:/core/images/clone-button}}&lt;/span&gt;",
+            "title": "$:/plugins/telmiger/Clipboard/icons/clone",
+            "tags": "",
+            "modified": "20170216200053066",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/file": {
+            "created": "20170216193254841",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/core/images/file}}",
+            "title": "$:/plugins/telmiger/Clipboard/icons/file",
+            "tags": "",
+            "modified": "20170216193517958",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/fold": {
+            "created": "20170216193714119",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/core/images/fold-button}}",
+            "title": "$:/plugins/telmiger/Clipboard/icons/fold",
+            "tags": "",
+            "modified": "20170216193726793",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/link": {
+            "created": "20170216194654940",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/core/images/link}}",
+            "title": "$:/plugins/telmiger/Clipboard/icons/link",
+            "tags": "",
+            "modified": "20170216194710125",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/transclude": {
+            "created": "20170216194928137",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;span class=\"te-rotate-icon\"&gt;{{$:/core/images/excise}}&lt;/span&gt;",
+            "title": "$:/plugins/telmiger/Clipboard/icons/transclude",
+            "tags": "",
+            "modified": "20170216195247510",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/icons/unfold": {
+            "created": "20170216191747840",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/core/images/unfold-button}}",
+            "title": "$:/plugins/telmiger/Clipboard/icons/unfold",
+            "tags": "",
+            "modified": "20170216191941222",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/Clipboard/readme": {
+            "created": "20170216155009811",
+            "creator": "Thomas Elmiger",
+            "text": "!! Clipboard Plugin\nThis plugin adds some handy elements to the editor interface of TiddlyWiki. Via settings you can control the appearance of:\n\n* two additional fields to store universally accessible information\n* five editor toolbar buttons (with friendly background color)\n** show/hide clipboard: ctrl+shift+C\n** show/hide preview: ctrl+shift+V\n** insert text: ctrl+shift+1\n** insert title link: ctrl+shift+2\n** insert title transclusion: ctrl+shift+3\n* a copy-title button\n** {{$:/plugins/telmiger/Clipboard/TitleTemplate!!description}}: ctrl+shift+T\n\nVia the plugin’s settings you have full control over all elements, so you can use a selection that fits in your workflow. Now see what they can do for you!\n\n!!! Clipboard Field\nBelow the tags of the tiddler you can access the //Clipboard//. Here you store information you wish to access from other tiddlers you will edit later. This field is like a window to another independent tiddler: the clipboard tiddler. It is saved whenever the wiki is saved. It’s content can be inserted in the tiddlers text by clicking a button (see below).\n\n!!! Title Clipboard Field\nHere you can store – well, the title of a tiddler. You can insert it in any other tiddler you edit later on with the click of a single button – as a link or as a transclusion (see below). \n\n!!! Copy-Title Button\nNext to the title input field resides a button that copies the title of your draft to the //Title Clipboard//. \n\n!!! Editor Toolbar Buttons\nShow up to five buttons in the editor toolbar:\n\n&lt;span class=\"te-btn-list\"&gt;\n\n* {{$:/plugins/telmiger/Clipboard/icons/unfold}} Show/Hide clipboard fields \n* {{$:/plugins/telmiger/Clipboard/icons/file}} Show/Hide clipboard preview: if you have stored a transclusion in your //Clipboard//, this button will produce a preview of the rendered content. Maybe you want to copy from there? Ort try to transclude `{{$:/AdvancedSearch}}` in the //Clipboard//. Very useful.\n* {{$:/plugins/telmiger/Clipboard/icons/clip}} Insert text from clipboard: transfers the //Clipboard’s// content to the position of the cursor in the editor.\n* {{$:/plugins/telmiger/Clipboard/icons/link}} Insert clipboard title as link: puts the content of the //Title Clipboard// in double square brackets and places the result at the cursor position.\n* {{$:/plugins/telmiger/Clipboard/icons/transclude}} Insert clipboard title as transclusion: the same as above, but with curly brackets.\n\n&lt;/span&gt;\n\n!!! Tips for Advanced Users\n* Want to test a filter? Put `{{$:/AdvancedSearch}}` in your clipboard and use the fully functional preview. No need to leave your workspace.\n* Want to see the source (wikitext) of another tiddler? Put an `&lt;$edit-text …/&gt;` widget in the clipboard and preview … \n* Would you rather have a preview of your work as an overlay instead of side-by-side? Write `{{Draft of 'Your Tiddler Title'}}` in the clipboard – et voilà!",
+            "title": "$:/plugins/telmiger/Clipboard/readme",
+            "tags": "Clipboard",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170917220330821"
+        },
+        "$:/config/ShortcutInfo/clipboard-insert-text": {
+            "created": "20170917204424510",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert!!description}} ",
+            "title": "$:/config/ShortcutInfo/clipboard-insert-text",
+            "tags": "",
+            "modified": "20170917211509012",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/shortcuts/clipboard-insert-title-transclude": {
+            "created": "20170917211403173",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/shortcuts/clipboard-insert-title-transclude",
+            "text": "ctrl-shift-3",
+            "modified": "20170917211403173",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/shortcuts/clipboard-insert-title-link": {
+            "created": "20170917205632133",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/shortcuts/clipboard-insert-title-link",
+            "text": "ctrl-shift-2",
+            "modified": "20170917211325383",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/shortcuts/clipboard-insert-text": {
+            "created": "20170917204649757",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/shortcuts/clipboard-insert-text",
+            "text": "ctrl-shift-1",
+            "modified": "20170917211304564",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/shortcuts/clipboard": {
+            "created": "20170917195814602",
+            "creator": "Thomas Elmiger",
+            "text": "ctrl+shift+c",
+            "title": "$:/config/shortcuts/clipboard",
+            "tags": "",
+            "modified": "20170917211246753",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/ShortcutInfo/clipboard-insert-title-transclude": {
+            "created": "20170917210718697",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-transclude!!description}}",
+            "title": "$:/config/ShortcutInfo/clipboard-insert-title-transclude",
+            "tags": "",
+            "modified": "20170917210948729",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/ShortcutInfo/clipboard": {
+            "created": "20170917200920825",
+            "creator": "Thomas Elmiger",
+            "text": "{{$:/plugins/telmiger/Clipboard/EditorToolbar/cb!!description}}",
+            "title": "$:/config/ShortcutInfo/clipboard",
+            "tags": "",
+            "modified": "20170917210646267",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/config/ShortcutInfo/clipboard-insert-title-link": {
+            "created": "20170917204944259",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/ShortcutInfo/clipboard-insert-title-link",
+            "modified": "20170917210615765",
+            "modifier": "Thomas Elmiger",
+            "text": "{{$:/plugins/telmiger/Clipboard/EditorToolbar/cb-insert-title-link!!description}}"
+        },
+        "$:/config/ShortcutInfo/clipboard-preview": {
+            "created": "20170917211855259",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/ShortcutInfo/clipboard-preview",
+            "modified": "20170917212007727",
+            "modifier": "Thomas Elmiger",
+            "text": "{{$:/plugins/telmiger/Clipboard/EditorToolbar/cb-preview!!description}}"
+        },
+        "$:/config/shortcuts/clipboard-preview": {
+            "created": "20170917212054765",
+            "creator": "Thomas Elmiger",
+            "title": "$:/config/shortcuts/clipboard-preview",
+            "text": "ctrl-shift-V",
+            "modified": "20170917212054765",
+            "modifier": "Thomas Elmiger"
+        }
+    }
+}</pre>
+</div>
+<div created="20210629170851245" list="test" modified="20210629170910455" te-cb-title="New Tiddler 1" te-cb-titles="[[New Tiddler 1]]" title="$:/plugins/telmiger/Clipboard/cb">
+<pre>ddaa</pre>
+</div>
+<div author="Thomas Elmiger" core-version="5.1.13" created="20170205215504722" description="DetailsWidget" list="readme license" modified="20180925212742614" name="Disclosure HTML element" plugin-type="plugin" source="https://tid.li/tw5/plugins.html" title="$:/plugins/telmiger/details" type="application/json" version="0.7.4">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/telmiger/details/details.css": {
+            "text": "/* details and summary */\n\ndetails {\n   transition: height 1s ease;\n   padding: 0 0.5em 0 0.66em;\n   margin-top: 0.66em;\n   margin-bottom: 0.66em;\n}\n\ndetails + details {\n   margin-top: -0.46em;\n}\n\ndetails[open] {\n   padding-bottom: 1em;\n}\n\ndetails:not([open]) { \n   cursor: pointer;\n}\n\ndetails &gt; summary {\n   display: list-item;\n   margin: 0 -0.5em 0 -0.66em;\n   padding: 0.2em 0.5em 0.2em 0.66em;\n   padding-left: 1.76em;  /* adjust for indentation */\n   text-indent: -1.1em;\n   cursor: pointer;\n}\n\ndetails[open] &gt; summary {\n   margin-bottom: 1em;\n}\n\ndetails[open] &gt; *:first-child:not(summary) {\n   margin-top: 1em;\n}\n",
+            "title": "$:/plugins/telmiger/details/details.css",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180929131615369",
+            "creator": "Thomas Elmiger",
+            "created": "20170122140815442"
+        },
+        "$:/plugins/telmiger/details/details.js": {
+            "text": "/*\\\ntitle: $:/plugins/telmiger/details/details.js\ntype: application/javascript\nmodule-type: widget\n\nDetails widget v 0.8\n\nWill output an HTML 5 &lt;details&gt; section including a &lt;summary&gt;\n\n```\n\t&lt;details&gt;\n\t\t&lt;summary&gt;This sums it up&lt;/summary&gt; \n\t\tAll the details follow here.\n\t&lt;/details&gt;\n```\n\n|Parameter |Description |h\n|summary |Optional text to display as summary. Wins over field (see below). |\n|open |Optional initial state, set to \"open\" to show details on load. Defaults to \"\". |\n|state |An optional TextReference containing the state. Wins over open. |\n|field |Optionally, the summary is taken from the field with this name in a given tiddler. Defaults to \"title\". |\n|tiddler |Optional title of a tiddler to watch, connected to field. Defaults to current tiddler. |\n|class |Optional CSS classes to be assigned to the details tag. |\n\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar DetailsWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nDetailsWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nDetailsWidget.prototype.render = function(parent,nextSibling) {\n\t// Save the parent dom node\n\tthis.parentDomNode = parent;\n\t// Compute attributes\n\tthis.computeAttributes();\n\t// Execute logic\n\tthis.execute();\n\t// Create elements\n\tthis.detailsDomNode = this.document.createElement(\"details\");\n\tif(this.detailsClass !== \"\") {\n\t\t// this.detailsClass += \" \";\n\t\t// this.detailsClass += \"tc-details\";\n\t\tthis.detailsDomNode.setAttribute(\"class\",this.detailsClass);\n\t}\n\tif(this.detailsOpen == \"open\") {\n\t\tthis.detailsDomNode.setAttribute(\"open\",\"open\");\n\t}\n\tif(this.detailsSummary !== \"\") {\n\t\tthis.summaryDomNode = this.document.createElement(\"summary\");\n\t\t// this.summaryDomNode.setAttribute(\"class\",\"tc-summary\");\n\t\tthis.detailsDomNode.appendChild(this.summaryDomNode);\n\t\tthis.summaryDomNode.appendChild(this.document.createTextNode(this.detailsSummary));\n\t}\n// register an event listener\n/* Maybe this can be reactivated later, see below.\n\tif(this.detailsStateTitle) {\n\t\t$tw.utils.addEventListeners(this.detailsDomNode,[\n\t\t\t{name: \"toggle\", handlerObject: this, handlerMethod: \"handleToggleEvent\"},\n\t\t]);\n\t}\n*/\n// As iOS mobile browsers lack support of toggle events on details \n// we emulate the toggle event using click\n\tif(this.detailsStateTitle &amp;&amp; this.summaryDomNode) {\n\t\t$tw.utils.addEventListeners(this.summaryDomNode,[\n\t\t\t{name: \"click\", handlerObject: this, handlerMethod: \"handleToggleEvent\"},\n\t\t]);\n\t} else {\n\t\tif(this.detailsStateTitle) {\n\t\t\t$tw.utils.addEventListeners(this.detailsDomNode,[\n\t\t\t\t{name: \"click\", handlerObject: this, handlerMethod: \"handleToggleEvent\"},\n\t\t\t]);\n\t\t}\n\t}\n\t// Insert the details into the DOM and render any children\n\tthis.parentDomNode.insertBefore(this.detailsDomNode,nextSibling);\n\tthis.renderChildren(this.detailsDomNode,null);\n\tthis.domNodes.push(this.detailsDomNode);\n};\n\n/*\nRetrieve the value of the summary\n*/\nDetailsWidget.prototype.getSummary = function() {\n\tvar summary = \"\";\n\tif(this.summaryTitle === \"Tiddler not found\" &amp;&amp; this.summaryField === \"\") {\n\t// nothing defined: leave empty \n\t\tsummary = \"\";\n\t} else {\n\t\t// tiddler defined? use defined field or title\n\t\tif(this.myTiddler) {\n\t\t\tif(this.summaryField === \"title\" || this.summaryField === \"\") {\n\t\t\t\tsummary = this.summaryTitle;\n\t\t\t} else {\n\t\t\t\tif(this.summaryField === \"text\") {\n         \t\t// getTiddlerText() triggers lazy loading of skinny tiddlers\n\t\t\t\t\tsummary = this.wiki.getTiddlerText(this.summaryTitle);\n\t\t\t\t} else {\n\t\t\t\t\tsummary = this.myTiddler.fields[this.summaryField];\n\t\t\t\t}\n\t\t\t}\n\t\t} else {\n\t\t\tif(this.summaryField !== \"\" &amp;&amp; this.summaryField !== \"text\") {\n\t\t\t\t// try defined field in current tiddler\n\t\t\t\tvar tiddler = this.wiki.getTiddler(this.getVariable(\"currentTiddler\"));\n\t\t\t\tsummary = tiddler.fields[this.summaryField];\n\t\t\t} else {\n\t\t\t\tsummary = \"\";\n\t\t\t}\n\t\t}\n\t}\n   return summary;\n};\n\n/*\nRetrieve the value of the state text reference\n*/\nDetailsWidget.prototype.getStateFromReference = function() {\n    var state = this.detailsStateTitle ? this.wiki.getTextReference(this.detailsStateTitle,\"\",this.getVariable(\"currentTiddler\")) : \"\";\n    return state;\n};\n\n/*\nCheck all open signals, state fields/tiddlers get priority\n*/\nDetailsWidget.prototype.getOpenState = function() {\n\tvar result = \"\";\n\tif((this.detailsOpenDefault !== \"\" &amp;&amp; this.detailsOpenDefault !== \"no\") \n\t    || this.detailsState === \"open\") {\n\t\tresult = \"open\";\n\t } \n\tif(this.detailsStateTitle !==\"\" &amp;&amp; this.detailsState !== \"open\") {\n\t\tresult = \"\";\n\t}\n\treturn result;\n};\n\n/*\nUpdate the state text reference after click event\n*/\nDetailsWidget.prototype.updateState = function(openState) {\n\tvar fieldValue = \"false\";\n\tvar currentTiddler = this.getVariable(\"currentTiddler\");\n    // get the title for the (existing/new) tiddler\n\tvar tr = $tw.utils.parseTextReference(this.detailsStateTitle);\n\tvar tidTitle = tr.title || currentTiddler;\n    // is it an existing state tiddler?\n\tvar isStateTiddler = (tr.title === this.detailsStateTitle);\n\tvar hasStateTiddler = this.wiki.tiddlerExists(tr.title);\n\tvar currentStateTiddler = (tr.title === currentTiddler);\n\tif(isStateTiddler || hasStateTiddler || (currentStateTiddler &amp;&amp; tr.field !== \"text\")) { \n\t\t// Set the state field (but never overwrite the current tiddler’s text field\n\t\tthis.wiki.setText(tidTitle,tr.field,tr.index,openState);\n\t} else {\n\t\tif(!hasStateTiddler &amp;&amp; tidTitle !== currentTiddler) {\n\t\t\tthis.createTiddler(tidTitle);\n\t\t\tthis.wiki.setText(tidTitle,tr.field,tr.index,openState);\n\t\t} else {\n\t\t\tconsole.log (\"Something went wrong in updateState\");\n\t\t}\n\t}\n};\n\n/*\nCreate a tiddler with a title only\n*/\nDetailsWidget.prototype.createTiddler = function(tidTitle) {\n\tthis.wiki.addTiddler(new $tw.Tiddler(\n\t\tthis.wiki.getCreationFields(),\n\t\tthis.wiki.getModificationFields(),\n\t\t{\n\t\t\ttitle: tidTitle,\n\t\t\ttags: []\n\t\t}\n\t));\n};\n\n/*\nSet openState according to click\n*/\nDetailsWidget.prototype.handleToggleEvent = function(event) {\n\t// check if an open attribute is present\n\tvar newState = this.detailsDomNode.open ? \"\" : \"open\";\n\t// update only, if the node has a new state\n\tif(newState !== this.detailsState) {\n\t\tthis.updateState(newState);\n\t}\n};\n\n/*\nCompute the internal state of the widget\n*/\nDetailsWidget.prototype.execute = function() {\n\t// Get the parameters from the attributes \n\tvar tryTiddler = this.getAttribute(\"tiddler\");\n\tthis.myTiddler = this.wiki.getTiddler(tryTiddler);\n\tthis.summaryTitle = this.myTiddler ? tryTiddler : \"Tiddler not found\";\n\tthis.summaryField = this.getAttribute(\"field\",\"\");\n\tthis.detailsSummary = this.getAttribute(\"summary\") || this.getSummary();\n\tthis.detailsStateTitle = this.getAttribute(\"state\",\"\");\n\tthis.detailsState = this.getStateFromReference();\n\tthis.detailsOpenDefault = this.getAttribute(\"open\",\"\");\n\tthis.detailsOpen = this.getOpenState();\n\tthis.detailsClass = this.getAttribute(\"class\",\"\");\n\t// Construct the child widgets\n\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nDetailsWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.tiddler || changedAttributes.field || changedAttributes.summary || changedAttributes.state || changedAttributes.open || changedAttributes[\"class\"]) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\tvar refreshed = false;\n\t\tvar testState = this.getStateFromReference();\n\t\tif(testState !== this.detailsState) {\n\t\t\t// state change\n\t\t\tthis.refreshSelf();\n\t\t\trefreshed = true;\n\t\t} \n\t\treturn this.refreshChildren(changedTiddlers) || refreshed;\n\t}\n};\n\nexports.details = DetailsWidget;\n\n})();",
+            "type": "application/javascript",
+            "title": "$:/plugins/telmiger/details/details.js",
+            "tags": "Plugins",
+            "module-type": "widget",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180929212032187",
+            "creator": "Thomas Elmiger",
+            "created": "20170124173619910"
+        },
+        "$:/plugins/telmiger/details/icon": {
+            "created": "20170205205314072",
+            "text": "&lt;svg class=\"tc-image-button telmiger-icon\" viewBox=\"0 0 128 128\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" viewBox=\"0 0 128 128\" role=\"img\" aria-labelledby=\"title\"&gt;&lt;title id=\"title\"&gt;T&lt;/title&gt;&lt;path class=\"circle\" d=\"M64 2C30 2 2 29.753 2 64c0 34.235 27.753 62 62 62s62-27.752 62-62C126 29.753 98.221 2 64 2z\"/&gt;&lt;path class=\"t\" d=\"M100.41 63.254c-2.886 1.92-7.544 2.883-13.979 2.883h-8.008c-4.246 0-7.331.845-9.254 2.536-1.922 1.69-3.449 5.086-4.576 10.19 0 0-.181 1.481-.503 1.481s-.369-.877-.518-1.586a37.897 37.897 0 0 0-.721-2.754c-.631-2.137-1.262-3.753-1.894-4.847-.764-1.359-1.727-2.452-2.889-3.28-1.162-.83-2.49-1.326-3.985-1.492l-2.092-.248H41.73c-6.144 0-10.711-.962-13.7-2.884-4.976-3.159-7.649-9.129-8.02-17.91-.03-.706.003-1.351.132-2.171h.585c.399 3.975 3.679 7.048 6.086 9.219 2.408 2.172 6.269 3.258 11.581 3.258h9.313c5.347 0 9.257 1.226 11.731 3.68 2.231 2.213 3.701 5.68 4.406 10.4.076.511.03.736.178.736.149 0 .11-.256.17-.783.713-6.122 3.085-10.219 7.117-12.294 2.487-1.292 6.434-1.906 11.841-1.839l6.368.1c4.311.066 7.942-.788 10.893-2.56 2.953-1.773 6.447-5.079 6.844-9.917h.595c.183.478.16 1.576.127 2.333-.371 8.752-2.894 14.668-7.567 17.749z\"/&gt;&lt;/svg&gt;\n&lt;style&gt;\n.telmiger-icon .circle { fill: #e2001a }\n.telmiger-icon .t { fill: #fff }\n&lt;/style&gt;",
+            "title": "$:/plugins/telmiger/details/icon",
+            "tags": "",
+            "modified": "20171219183752113"
+        },
+        "$:/plugins/telmiger/details/license": {
+            "text": "!! Plugin license\n!!!The MIT License (MIT)\n\n```\nCopyright © 2017/2018 Thomas Elmiger – thomas-elmiger.ch\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n```",
+            "title": "$:/plugins/telmiger/details/license",
+            "tags": "",
+            "modified": "20170205214435064",
+            "created": "20170205213335455"
+        },
+        "$:/plugins/telmiger/details/readme": {
+            "created": "20170205212323032",
+            "text": "! ~DetailsWidget\n\nA plugin for [[TiddlyWiki|http://tiddlywiki.com]] 5 containing a script and some styles to create an HTML 5 `&lt;details&gt;` section including a `&lt;summary&gt;`. Here’s an example:\n\n&lt;$details summary=\"W3C definition\"&gt;\n\n&lt;&lt;&lt;\nThe [[details|http://w3c.github.io/html/interactive-elements.html#elementdef-details]] element represents a disclosure widget from which the user can obtain additional information or controls.\n&lt;&lt;&lt; W3C\n\n&lt;/$details&gt;\n\nDocumentation can be found at http://tid.li/tw5/plugins.html#DetailsWidget\n",
+            "title": "$:/plugins/telmiger/details/readme",
+            "tags": "",
+            "modified": "20171219183752113"
+        },
+        "$:/plugins/telmiger/details/colours.css": {
+            "text": "/* details and summary colours */\n\ndetails {\n   background-color: &lt;&lt;colour tiddler-info-tab-background&gt;&gt;;\n   color: &lt;&lt;colour foreground&gt;&gt;;\n}\n\ndetails summary {\n   background-color: &lt;&lt;colour dropdown-tab-background&gt;&gt;;\n}\n\ndetails.notification summary {\n    background-color: &lt;&lt;colour notification-background&gt;&gt;;\n    /* TW leaves color undefined/uses foreground */\n}\n\ndetails.warning summary {\n    background-color: #ffbbaf;\n    color: #000;\n}\n\ndetails.success summary {\n    background-color: #88edc5;\n    color: #000;\n}\n",
+            "title": "$:/plugins/telmiger/details/colours.css",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180926204140772",
+            "creator": "Thomas Elmiger",
+            "created": "20180925155320737"
+        },
+        "$:/plugins/telmiger/details/accordion": {
+            "text": "\\define accordion(filter:\"_no_\",open:\"no\",class:\"\")\n&lt;$vars accordion-filter=\"\"\"$filter$\"\"\" open=\"\"\"$open$\"\"\" class=\"\"\"$class$\"\"\"&gt;\n&lt;$list filter=&lt;&lt;accordion-filter&gt;&gt;&gt;\n&lt;$details summary=&lt;&lt;currentTiddler&gt;&gt; open=&lt;&lt;open&gt;&gt; class=&lt;&lt;class&gt;&gt;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n\n&lt;/$details&gt;\n&lt;/$list&gt;\n&lt;/$vars&gt;\n\\end\n\n&lt;!-- !!! Accordion Macro for Details\n\nList tiddlers and open them in a details-summary structure\n\n!!!! Attributes\n* filter: filter to select tiddlers\n* open: set to \"open\" to display details on load\n* class: set a class for the details tag\n\n--&gt;",
+            "title": "$:/plugins/telmiger/details/accordion",
+            "tags": "$:/tags/Macro",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180929065014252",
+            "creator": "Thomas Elmiger",
+            "created": "20180928194557274"
+        }
+    }
+}</pre>
+</div>
+<div author="Thomas Elmiger" core-version="&gt;=5.1.14" dependents="Listreveal, rpn" description="FlippyCards" list="configuration" name="FlippyCards" plugin-type="plugin" source="https://tid.li/tw5/plugins.html" title="$:/plugins/telmiger/FlippyCards" type="application/json" version="0.2.3">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/telmiger/FlippyCards/card-IDs/next": {
+            "text": "1",
+            "title": "$:/plugins/telmiger/FlippyCards/card-IDs/next",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180505060658539",
+            "creator": "Thomas Elmiger",
+            "created": "20180411162529208"
+        },
+        "$:/plugins/telmiger/FlippyCards/cardy.css": {
+            "created": "20180413210219318",
+            "creator": "Thomas Elmiger",
+            "text": "/*\n** Cardy Plugin Styles\n** (c) Thomas Elmiger\n** \"\"\" \n*/\n\n/*\n** Card\n*/\n\n.tc-tiddler-view-frame {\n   height: initial;\n}\n\n.tc-tagged-CardyCard &gt; *,\n.tc-tagged-CardyCardDone &gt; * {\n   display: none;\n}\n\n.tc-tagged-CardyCard .tc-tiddler-body:first-child,\n.tc-tagged-CardyCardDone .tc-tiddler-body:first-child,\n.tc-tagged-CardyCard article.te-cardy-content,\n.tc-tagged-CardyCardDone article.te-cardy-content,\n.tc-tagged-CardyCard nav,\n.tc-tagged-CardyCardDone nav {\n   display: initial;\n   width: 100%;\n}\n\n.te-cardy-caption {\n   border: 0 dotted black;\n   border-bottom-width: 1px;\n   padding: 1rem 0 1rem 0;\n}\n\n.te-cardy-body {\n   padding: 1rem 0 1rem 0;\n}\n\n\n/* remove tiddler background */\n\n.tc-tiddler-view-frame.tc-tagged-CardyCard {\n    background: transparent;\n    border: none;\n    box-shadow: none;\n}\n\n\n/* summary and details */\n\n.te-cardy-content .details-content {\n   padding-top: 0.5rem\n}\n\n.te-cardy-footer {\n   position: relative;\n   margin-top: 1rem;\n   width: 100%;\n}\n\n.te-cardy-footer {\n   width: 100%;\n}\n\n.te-cardy-content .te-align-right {\n   position: absolute;\n}\n\n\n/*\n** Buttons\n*/\n\n.cardy .te-pseudo-button {\n    position: absolute;\n    top: -2rem;\n}\n\n.te-cardy-actions {\n    position: relative;\n    top: -0.25rem;\n    text-align: right;\n}\n\n.tc-topbar-right .te-btn-big {\n   margin-top: 0.25rem;\n}\n\n\n/*\n** Edit\n*/\n\n.te-cardy-caption-edit, .te-cardy-text-edit {\n   width: 100%;\n}\n\n\n/*\n** List\n*/\n\n.lr-item-title {\n   width: 6rem;\n   margin-right: 1rem;\n}\n\n.te-truncate {\n   width: 24rem;\n   white-space: nowrap;\n   overflow: hidden;\n   text-overflow: ellipsis;\n}\n\n\n/* End \"\"\" */",
+            "title": "$:/plugins/telmiger/FlippyCards/cardy.css",
+            "tags": "$:/tags/Stylesheet Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506134236241"
+        },
+        "$:/plugins/telmiger/FlippyCards/settings": {
+            "created": "20180505144513710",
+            "creator": "Thomas Elmiger",
+            "text": "{\n    \"cardHeight\": \"55vh\",\n    \"showStoryNav\": \"yes\"\n}",
+            "type": "application/json",
+            "title": "$:/plugins/telmiger/FlippyCards/settings",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506133234597"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/active-inactive": {
+            "text": "\\define teBtnSlavesListops(master,btntext,add-remove,tooltip,tip:\"_false_\",class:\"\")\n&lt;$vars master=\"\"\"$master$\"\"\" tip=\"\"\"$tip$\"\"\" btnclass=\"te-btn-action te-tag-listops $class$\"&gt;\n&lt;$set name=\"mytip\" filter=\"[&lt;tip&gt;removeprefix[_false_]]\" emptyValue=\"\"\"&lt;span class=\"te-tip\"&gt;$tip$&lt;/span&gt;\"\"\"&gt;\n&lt;$button class=&lt;&lt;btnclass&gt;&gt; tooltip=\"\"\"$tooltip$\"\"\"&gt;\n&lt;&lt;teTimestampPause&gt;&gt;\n&lt;$list filter=\"[&lt;master&gt;][lr-mastertiddler&lt;master&gt;]\"&gt;\n&lt;$action-listops $tags=\"$add-remove$\" /&gt;\n&lt;/$list&gt;\n$btntext$\n&lt;&lt;mytip&gt;&gt;\n&lt;&lt;teTimestampResume&gt;&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n&lt;$set name=\"master\" filter=\"\"\"[all[current]lr-mastertiddler[yes]]\"\"\" emptyValue={{!!lr-mastertiddler}}&gt;\n&lt;$list filter=\"[all[current]tag[CardyCardDone]]\"&gt;\n&lt;$wikify name=\"tt\" text=\"activate\"&gt;\n&lt;$wikify name=\"tip\" text=\"use again\"&gt;\n   &lt;$macrocall $name=\"teBtnSlavesListops\" master=&lt;&lt;master&gt;&gt; btntext=\"{{$:/core/images/preview-closed}}\" add-remove=\"CardyCard -CardyCardDone\" tooltip=&lt;&lt;tt&gt;&gt; tip=&lt;&lt;tip&gt;&gt; class=\"muted\"/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$list&gt;\n&lt;$list filter=\"[all[current]tag[CardyCard]]\"&gt;\n&lt;$wikify name=\"tip\" text=\"set inactive\"&gt;\n&lt;$wikify name=\"tt\" text=\"do not use again\"&gt;\n   &lt;$macrocall $name=\"teBtnSlavesListops\" master=&lt;&lt;master&gt;&gt; btntext=\"{{$:/core/images/preview-open}}\" add-remove=\"CardyCardDone -CardyCard\" tooltip=&lt;&lt;tt&gt;&gt; tip=&lt;&lt;tip&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/active-inactive",
+            "tags": "TemplateTiddler Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180424055425948",
+            "creator": "Thomas Elmiger",
+            "created": "20180414210915296"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/close": {
+            "text": "&lt;span class=\"te-cardy-close\"&gt;\n&lt;$button message=\"tm-close-tiddler\" param={{!!title}} tooltip=\"close card\" aria-label={{$:/language/Buttons/Close/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n{{$:/core/images/close-button}}\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;close card&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/span&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/close",
+            "tags": "TemplateTiddler Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180503190229494",
+            "creator": "Thomas Elmiger",
+            "created": "20180414193433806"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/delete": {
+            "text": "\\define teBtnSlavesDelete(master,tooltip:\"_false_\",tip:\"_false_\",class:\"\")\n&lt;$vars master=\"\"\"$master$\"\"\" tooltip=\"\"\"$tooltip$\"\"\" tip=\"\"\"$tip$\"\"\" btnclass=\"te-btn-action te-cardy-delete $class$\"&gt;\n&lt;$set name=\"mytip\" filter=\"[&lt;tip&gt;!prefix[_false_]]\" value=\"\"\"&lt;span class=\"te-tip\"&gt;$tip$&lt;/span&gt;\"\"\" emptyValue=\"\"&gt;\n&lt;$set name=\"ttip\" filter=\"[&lt;tooltip&gt;!prefix[_false_]]\" value=&lt;&lt;tooltip&gt;&gt; emptyValue={{$:/language/Buttons/Delete/Hint}}&gt;\n&lt;$button tooltip=&lt;&lt;ttip&gt;&gt; aria-label={{$:/language/Buttons/Delete/Caption}} class=&lt;&lt;btnclass&gt;&gt; to=\"Cards Manager\"&gt;\n&lt;$list filter=\"[&lt;master&gt;][lr-mastertiddler&lt;master&gt;]\"&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;$action-sendmessage $message=\"tm-close-tiddler\" param=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$list&gt;\n{{$:/core/images/delete-button}}\n&lt;&lt;mytip&gt;&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n&lt;$set name=\"master\" filter=\"\"\"[all[current]lr-mastertiddler[yes]]\"\"\" emptyValue={{!!lr-mastertiddler}}&gt;\n&lt;$wikify name=\"tt\" text=\"delete card\"&gt;\n&lt;$wikify name=\"tip\" text=\"delete &lt;&lt;currentTiddler&gt;&gt; and other sides of the card\"&gt;\n   &lt;$macrocall $name=\"teBtnSlavesDelete\" master=&lt;&lt;master&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; tip=&lt;&lt;tip&gt;&gt; class=\"muted\"/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$set&gt;\n",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/delete",
+            "tags": "TemplateTiddler Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180503190659379",
+            "creator": "Thomas Elmiger",
+            "created": "20180424160859980"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/flip-pseudo": {
+            "text": "&lt;span class=\"te-pseudo-button\" title=\"flip card\" aria-label=\"flip card\"&gt;{{$:/core/images/refresh-button}}&lt;/span&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/flip-pseudo",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180504055854797",
+            "creator": "Thomas Elmiger",
+            "created": "20180503184156670"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/new": {
+            "created": "20180414080055818",
+            "text": "&lt;$vars title=\"Card-{{$:/plugins/telmiger/FlippyCards/card-IDs/next}}-\"&gt;\n&lt;$wikify name=\"title1\" text=\"&lt;&lt;title&gt;&gt;A\"&gt;\n&lt;$wikify name=\"title2\" text=\"&lt;&lt;title&gt;&gt;B\"&gt;\n&lt;$wikify name=\"sidetid\" text=\"$:/state/cardy/&lt;&lt;title&gt;&gt;side\"&gt;\n&lt;$wikify name=\"modetid\" text=\"$:/state/cardy/&lt;&lt;title&gt;&gt;mode\"&gt;\n&lt;span&gt;&lt;$button tooltip=\"new card\" class=\"te-btn-big te-create\"&gt;\n&lt;$action-createtiddler $basetitle=&lt;&lt;title1&gt;&gt; tags=\"CardyCard\" text=\"\" caption=\"A\"\nlr-mastertiddler=\"yes\" lr-nexttiddler=\"B\"/&gt;\n&lt;$action-createtiddler $basetitle=&lt;&lt;title2&gt;&gt; tags=\"CardyCard\" text=\"\" caption=\"B\"\nlr-mastertiddler=&lt;&lt;title1&gt;&gt; lr-nexttiddler=\"A\"/&gt;\n&lt;$action-createtiddler $basetitle=&lt;&lt;sidetid&gt;&gt; text=\"A\"/&gt;\n&lt;$action-createtiddler $basetitle=&lt;&lt;modetid&gt;&gt; text=\"edit\"/&gt;\n&lt;$action-setfield $tiddler=\"$:/plugins/telmiger/FlippyCards/card-IDs/next\" $value=&lt;&lt;rpn \"{{$:/plugins/telmiger/FlippyCards/card-IDs/next}}\" 1 +&gt;&gt; /&gt;\n&lt;$action-navigate $to=&lt;&lt;title1&gt;&gt;/&gt;\n{{$:/core/images/new-button}}\n&lt;/$button&gt;&lt;/span&gt; \n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$vars&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/new",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181013190954390",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/SetTiddler": {
+            "text": "\\define teBtnSetTiddler(tiddler,btntext:\"{{$:/core/images/edit-button}}\",tooltip:\"\",tip:\"_false_\",text,class:\"\")\n&lt;$vars btnclass=\"te-btn-action te-set-tiddler $class$\" tip=\"$tip$\"&gt;\n&lt;$set name=\"mytip\" filter=\"\"\"[&lt;tip&gt;removeprefix[_false_]]\"\"\" emptyValue='&lt;span class=\"te-tip\"&gt;$tip$&lt;/span&gt;'&gt;\n&lt;$button class=&lt;&lt;btnclass&gt;&gt; tooltip=\"\"\"$tooltip$\"\"\"&gt;\n&lt;$action-setfield $tiddler=\"\"\"$tiddler$\"\"\" $value=\"\"\"$text$\"\"\" /&gt;\n&lt;$action-sendmessage $message=\"tm-auto-save-wiki\"/&gt;\n$btntext$\n&lt;&lt;mytip&gt;&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/SetTiddler",
+            "tags": "$:/tags/Macro Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180505062917625",
+            "creator": "Thomas Elmiger",
+            "created": "20180412161302266"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/tag-reuse": {
+            "text": "Reuse all inactive cards \n&lt;$button class=\"\"\"te-btn-big\"\"\" tooltip=\"replace tag CardyCardDone with tag CardyCard to activate\" &gt;\n&lt;&lt;teTimestampPause&gt;&gt;\n&lt;$list filter=\"[tag[CardyCardDone]]\"&gt;\n&lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\"tags\" $subfilter=\"CardyCard -CardyCardDone\"/&gt;\n&lt;/$list&gt;\n{{$:/core/images/preview-open}}\n&lt;&lt;teTimestampResume&gt;&gt;\n&lt;/$button&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/tag-reuse",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180424054507948",
+            "creator": "Thomas Elmiger",
+            "created": "20180423160137956"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/buttons/tag-update": {
+            "text": "Tags:\n&lt;$button class=\"\"\"te-btn-big\"\"\" tooltip=\"update tags on all sides for export\" &gt;\n&lt;&lt;teTimestampPause&gt;&gt;\n&lt;$list filter=\"[tag[CardyCard]lr-mastertiddler[yes]]\"&gt;\n&lt;$set name=\"mastertags\" filter=[enlist{!!tags}]&gt;\n&lt;$list filter=\"[lr-mastertiddler&lt;currentTiddler&gt;]\"&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\"tags\" $value=&lt;&lt;mastertags&gt;&gt;/&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n{{$:/core/images/link}}\n&lt;&lt;teTimestampResume&gt;&gt;\n&lt;/$button&gt;\n&lt;$button class=\"\"\"te-btn-big\"\"\" tooltip=\"remove tags from secondary sides\" &gt;\n&lt;&lt;teTimestampPause&gt;&gt;\n&lt;$list filter=\"[tag[CardyCard]lr-mastertiddler[yes]]\"&gt;\n&lt;$set name=\"cleartags\" value=\"CardyCard\"&gt;\n&lt;$list filter=\"[lr-mastertiddler&lt;currentTiddler&gt;]\"&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\"tags\" $value=&lt;&lt;cleartags&gt;&gt;/&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n{{$:/core/images/erase}}\n&lt;&lt;teTimestampResume&gt;&gt;\n&lt;/$button&gt;\n",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/buttons/tag-update",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180424055309000",
+            "creator": "Thomas Elmiger",
+            "created": "20180422193830474"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/templates/SingleCard": {
+            "text": "&lt;div class=\"te-cardy-caption\"&gt;\n\n&lt;$text text={{!!caption}}/&gt;\n\n&lt;/div&gt;\n&lt;div class=\"te-cardy-body\"&gt;\n\n{{!!text}}\n\n&lt;/div&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/templates/SingleCard",
+            "tags": "Cardy TemplateTiddler",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180414202038184",
+            "creator": "Thomas Elmiger",
+            "created": "20180411052508128"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/templates/SingleCardEdit": {
+            "created": "20180412160205098",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;div class=\"te-cardy-caption\"&gt;\n\n&lt;$edit-text field=\"caption\" class=\"te-cardy-caption-edit\"/&gt;\n\n&lt;/div&gt;\n&lt;div class=\"te-cardy-body\"&gt;\n\n&lt;$edit-text field=\"text\" placeholder=\"Card text goes here\" rows=\"3\" minHeight=\"3em\" autoHeight=\"yes\" class=\"te-cardy-text-edit\"/&gt;\n\n&lt;$list filter=\"[all[current]!has[draft.of]]\" variable=\"listItem\"&gt;\n&lt;$transclude tiddler=\"$:/core/ui/Buttons/edit\"/&gt; – open full editor\n&lt;/$list&gt;\n&lt;footer class=\"te-cardy-footer\"&gt;\n&lt;$wikify name=\"tpl\" text=&lt;&lt;telang date-created-tmpl&gt;&gt; &gt;\n&lt;$macrocall $name=\"listreveal-meta\" tiddler={{!!title}} datetime=&lt;&lt;tpl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;$list filter=\"\"\"[all[current]suffix[A]]\"\"\"&gt;\n&lt;&lt;listreveal-tags CardyCard&gt;&gt;\n&lt;/$list&gt;\n&lt;/footer&gt;\n&lt;/div&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/templates/SingleCardEdit",
+            "tags": "Cardy TemplateTiddler",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506195732640"
+        },
+        "$:/plugins/telmiger/FlippyCards/ui/viewtemplate-flip": {
+            "text": "&lt;$list filter=\"[all[current]tag[CardyCard]][all[current]tag[CardyCardDone]]\"&gt;\n&lt;$set name=\"master\" filter=\"[all[current]lr-mastertiddler[yes]]\" emptyValue={{!!lr-mastertiddler}}&gt;\n&lt;$set name=\"cardid\" filter=\"[&lt;master&gt;removesuffix[A]]\"&gt;\n&lt;$wikify name=\"cardmode\" text=\"$:/state/cardy/&lt;&lt;cardid&gt;&gt;mode\"&gt;\n&lt;$wikify name=\"cardstate\" text=\"$:/state/cardy/&lt;&lt;cardid&gt;&gt;side\"&gt;\n&lt;$wikify name=\"infostate\" text=\"$:/state/cardy/&lt;&lt;cardid&gt;&gt;info\"&gt;\n&lt;div class=\"tc-tiddler-body\"&gt;\n\t&lt;div class=\"te-cardy-actions\"&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"view\"&gt;\n&lt;$wikify name=\"tt\" text=\"&lt;&lt;telang Edit&gt;&gt;\"&gt;\n&lt;$macrocall $name=\"teBtnSetTiddler\" text=\"edit\" tiddler=&lt;&lt;cardmode&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; class=\"te-cardy-edit\"/&gt;\n&lt;/$wikify&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"edit\"&gt;\n&lt;$macrocall $name=\"teBtnSetTiddler\" text=\"view\" btntext=\"{{$:/core/images/done-button}}\" tiddler=&lt;&lt;cardmode&gt;&gt; tooltip=\"confirm changes\" class=\"te-cardy-edit\"/&gt;\n&lt;/$reveal&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/buttons/active-inactive}}\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"edit\"&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/buttons/delete}}\n&lt;/$reveal&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/buttons/close}}\n\t&lt;/div&gt;\n&lt;$checkbox class=\"cardy\" checked=\"B\" unchecked=\"A\" default=\"A\" tiddler=&lt;&lt;cardstate&gt;&gt; field=\"text\"&gt;{{$:/plugins/telmiger/FlippyCards/ui/buttons/flip-pseudo}}\n&lt;div class=\"card\"&gt;\n&lt;$list filter=\"\"\"[prefix&lt;cardid&gt;suffix[A]]\"\"\" variable=\"currentTiddler\"&gt;\n\t&lt;div class=\"front\"&gt;\n&lt;article class=\"te-cardy-content\"&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"view\"&gt;\n&lt;span title={{!!title}}&gt;{{||$:/plugins/telmiger/FlippyCards/ui/templates/SingleCard}}&lt;/span&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"edit\"&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/templates/SingleCardEdit}}\n&lt;/$reveal&gt;\n&lt;/article&gt;\n\t&lt;/div&gt;\n&lt;/$list&gt;\n   &lt;div class=\"back\"&gt;\n&lt;$list filter=\"\"\"[prefix&lt;cardid&gt;!suffix[A]]\"\"\"\nvariable=\"currentTiddler\"&gt;\n&lt;article class=\"te-cardy-content\"&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"view\"&gt;\n&lt;span title={{!!title}}&gt;{{||$:/plugins/telmiger/FlippyCards/ui/templates/SingleCard}}&lt;/span&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;cardmode&gt;&gt; text=\"edit\"&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/templates/SingleCardEdit}}\n&lt;/$reveal&gt;\n&lt;/article&gt;\n&lt;/$list&gt;\n   &lt;/div&gt;\n&lt;/div&gt;\n&lt;/$checkbox&gt;\n&lt;/div&gt;\n&lt;$reveal type=\"match\" tag=\"nav\" state=\"$:/plugins/telmiger/FlippyCards/settings##showStoryNav\" text=\"yes\"&gt;\n{{||$:/plugins/telmiger/lib/telements/story-nav}}\n&lt;/$reveal&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/ui/viewtemplate-flip",
+            "tags": "$:/tags/ViewTemplate TemplateTiddler Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506101529368",
+            "list-before": "$:/core/ui/ViewTemplate/title",
+            "creator": "Thomas Elmiger",
+            "created": "20180501194329173"
+        },
+        "$:/plugins/telmiger/FlippyCards/configuration": {
+            "created": "20180505142651073",
+            "text": "!! Configuration\n\n!!! Card settings\nThe standard entity for the card height is //vh//, a percentage of the viewport height or inner height of the browser window. Try ''75vh'' as a start.\n\nSet the CSS height value for the cards: &lt;$edit-text tiddler=\"$:/plugins/telmiger/FlippyCards/settings\" tag=\"input\" index=\"cardHeight\" class=\"\"/&gt;\n\nNext/previous navigation below each card&amp;nbsp;– &lt;$checkbox tiddler=\"$:/plugins/telmiger/FlippyCards/settings\" index=\"showStoryNav\" checked=\"yes\" unchecked=\"no\"&gt; show&lt;/$checkbox&gt;: {{$:/plugins/telmiger/FlippyCards/settings##showStoryNav}}\n\nNew card button in right top bar&amp;nbsp;– &lt;$checkbox tiddler=\"$:/plugins/telmiger/FlippyCards/ui/buttons/new\" tag=\"$:/tags/TopRightBar\"&gt; show&lt;/$checkbox&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/configuration",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181013190949684",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/FlippyCards/flip.css": {
+            "created": "20180502053414239",
+            "creator": "Thomas Elmiger",
+            "text": "\\define h() {{$:/plugins/telmiger/FlippyCards/settings##cardHeight}}\n\\define cardyStart() 0%, 0%\n\\define cardyBack() rotateY(180deg) translateZ(0)\n\\define cardyRotation() 0, 1, 0, 180deg\n\\define cardyRotationBack() 0, 1, 0, -180deg\n\\define cardyRotationHover() 0, 1, 0, 2deg\n\\define cardyRotationHover2() 0, 1, 0, 178deg\n\\define cardyOrigin() center\n\\define cardyShadow() -10px 20px 20px rgba(50,50,50,.2)\n\n\n/*\n** FlippyCards Effect\n** inspired by Jan and https://codepen.io/RuudBurger/pen/bwjry\n** \"\"\" \n*/\n\n\nlabel.cardy {\n    -webkit-perspective: 1200px;\n    perspective: 1200px;\n    -webkit-transform-style: preserve-3d;\n    transform-style: preserve-3d;\n    display: block;\n    width: calc(100% + 2rem);\n    position: relative;\n    left: 0%;\n    top: 0%;\n    -webkit-transform: translate(&lt;&lt;cardyStart&gt;&gt;);\n    transform: translate(&lt;&lt;cardyStart&gt;&gt;);\n    cursor: pointer;\n}\n\ndiv.card {\n    position: relative;\n    margin-left: -1rem;\n    margin-right: -1rem;\n    height: 100%;\n    width: 100%;\n    border: 1px solid lightgrey;\n    -webkit-transform-origin: &lt;&lt;cardyOrigin&gt;&gt;;\n    transform-origin: &lt;&lt;cardyOrigin&gt;&gt;;\n    -webkit-transform-style: preserve-3d;\n    transform-style: preserve-3d;\n    -webkit-transition: all 600ms;\n    transition: all 600ms;\n    z-index: 20;\n    background-color: &lt;&lt;colour tiddler-background&gt;&gt;;\n    color: &lt;&lt;colour foreground&gt;&gt;;\n}\n\n    .card div.front,\n    .card div.back {\n        height: &lt;&lt;h&gt;&gt;;\n        width: 100%;\n        overflow: scroll;\n        padding-left: 1rem;\n        padding-right: 1rem;\n        background: &lt;&lt;colour tiddler-background&gt;&gt;;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n    }\n\n    .card div.front {\n        position: relative;\n        top: 0;\n    }\n\n    .card div.back {\n        position: absolute;\n        top: 0;\n        background: rgba(240,240,240,1);\n        -webkit-transform: &lt;&lt;cardyBack&gt;&gt;;\n        transform: &lt;&lt;cardyBack&gt;&gt;;\n    }\n\nlabel:hover .card,\nlabel input:focus + span .card {\n    -webkit-transform: rotate3d(&lt;&lt;cardyRotationHover&gt;&gt;);\n    transform: rotate3d(&lt;&lt;cardyRotationHover&gt;&gt;);\n    box-shadow: &lt;&lt;cardyShadow&gt;&gt;;\n    border: 2px solid lightgrey;\n}\n\n:checked + span .card {\n    -webkit-transform: rotate3d(&lt;&lt;cardyRotation&gt;&gt;);\n    transform: rotate3d(&lt;&lt;cardyRotation&gt;&gt;);\n}\n\nlabel:hover :checked + span .card,\nlabel input:checked:focus + span .card {\n    -webkit-transform: &lt;&lt;cardyRotationHover2&gt;&gt;);\n    transform: rotate3d(&lt;&lt;cardyRotationHover2&gt;&gt;);\n    box-shadow: &lt;&lt;cardyShadow&gt;&gt;;\n    border: 2px solid darkgrey;\n}\n\nlabel.cardy &gt; input {\n    position: absolute !important;\n    clip: rect(1px, 1px, 1px, 1px);\n    padding:0 !important;\n    border:0 !important;\n    height: 1px !important;\n    width: 1px !important;\n    overflow: hidden;\n}\n\n\n/* End \"\"\" */",
+            "title": "$:/plugins/telmiger/FlippyCards/flip.css",
+            "tags": "$:/tags/Stylesheet Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506192414209"
+        },
+        "Cards Manager": {
+            "created": "20180414200016138",
+            "text": "\\define filter-active() \n[all[shadows+tiddlers]tag[CardyCard]tag{$:/config/listreveal/ProjectSelect/CardyCard}!sort[created]search{$:/config/listreveal/Search/CardsManager-active}]\n\\end\n\\define filter-inactive() \n[all[shadows+tiddlers]tag[CardyCardDone]tag{$:/config/listreveal/ProjectSelect/CardyCardDone}!sort[created]search{$:/config/listreveal/Search/CardsManager-inactive}]\n\\end\n\n\\define cardlistItem(tagExclude:\"\")\n&lt;$set name=\"tidTitle\" value={{!!title}}&gt;\n   &lt;li class=\"todo-item te-flex-item\"&gt;\n      &lt;span class=\"te-flex-item te-flex-half-full\"&gt;\n         &lt;span class=\"te-flex-item te-flex-content te-flex-left\"&gt;\n   &lt;span class=\"lr-item-title\"&gt;&lt;$link to={{!!title}}&gt;&lt;$view field=\"title\"/&gt;&lt;/$link&gt;&lt;/span&gt;&lt;span class=\"te-truncate\" title={{!!caption}}&gt;&lt;$view field=\"text\"/&gt;&lt;/span&gt;\n         &lt;/span&gt;\n      &lt;/span&gt;\n      &lt;span class=\"te-flex-item te-flex-half-full\"&gt;\n         &lt;span class=\"te-flex-item te-flex-content te-flex-right\"&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/buttons/active-inactive}}\n&lt;$reveal type=\"match\" state=\"$:/config/listreveal-mode\" text=\"edit\"&gt;\n{{||$:/plugins/telmiger/FlippyCards/ui/buttons/delete}}\n&lt;/$reveal&gt;\n&lt;&lt;teBtnEditShowModified&gt;&gt;\n&lt;$wikify name=\"cl\" text=&lt;&lt;telang close&gt;&gt; &gt;\n&lt;$wikify name=\"tt\" text=&lt;&lt;telang Details&gt;&gt; &gt;\n   &lt;$macrocall $name=\"listrevealButton\" title=&lt;&lt;tidTitle&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; close=&lt;&lt;cl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n         &lt;/span&gt;\n      &lt;/span&gt;\n&lt;$wikify name=\"tpl\" text=&lt;&lt;telang date-created-tmpl&gt;&gt; &gt;\n   &lt;$macrocall $name=\"listrevealContent\" title=&lt;&lt;tidTitle&gt;&gt; datetime=&lt;&lt;tpl&gt;&gt; tagExclude=\"\"\"$tagExclude$\"\"\"/&gt;\n&lt;/$wikify&gt;\n   &lt;/li&gt;\n&lt;/$set&gt;\n\\end\n\n&lt;section class=\"todo-now listreveal\"&gt;\n\n!! Active Cards &lt;span class=\"te-flex-item te-flex-content te-flex-right\"&gt;{{$:/plugins/telmiger/FlippyCards/ui/buttons/new}}&lt;&lt;listrevealBtnEdit&gt;&gt;&lt;/span&gt;\n\n&lt;$wikify name=\"listfilter\" text=\"\"\"&lt;&lt;filter-active&gt;&gt;\"\"\"&gt;\n&lt;div class=\"lr-search te-flex-item\"&gt;\n&lt;&lt;listrevealSearch \"CardsManager-active\"&gt;&gt; &lt;&lt;listrevealProjectSelect CardyCard&gt;&gt;\n&lt;/div&gt;\n&lt;ul class=\"te-list\"&gt;\n&lt;$list filter=&lt;&lt;listfilter&gt;&gt;&gt;\n&lt;&lt;cardlistItem \"CardyCard\"&gt;&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$wikify&gt;\n\n{{$:/plugins/telmiger/FlippyCards/ui/buttons/tag-update}}\n&lt;/section&gt;\n\n&lt;section class=\"todo-done listreveal-dim\"&gt;\n\n!! Inactive Cards &lt;span class=\"te-flex-item te-flex-content te-flex-right\"&gt;&lt;&lt;listrevealBtnEdit&gt;&gt;&lt;/span&gt;\n\n&lt;$wikify name=\"listfilter\" text=\"\"\"&lt;&lt;filter-inactive&gt;&gt;\"\"\"&gt;\n&lt;div class=\"lr-search te-flex-item\"&gt;\n&lt;&lt;listrevealSearch \"CardsManager-inactive\"&gt;&gt; &lt;&lt;listrevealProjectSelect CardyCardDone&gt;&gt;\n&lt;/div&gt;\n&lt;ul class=\"te-list\"&gt;\n&lt;$list filter=&lt;&lt;listfilter&gt;&gt;&gt;\n&lt;&lt;cardlistItem \"CardyCardDone\"&gt;&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$wikify&gt;\n\n{{$:/plugins/telmiger/FlippyCards/ui/buttons/tag-reuse}}\n&lt;/section&gt;\n\n---\n\nCardy needs the following plugins from [[tid.li/tw5/plugins.html|https://tid.li/tw5/plugins.html]] to function properly: \n\n* rpn Basic Math\n* Listreveal\n\n&lt;style&gt;\n.tc-tiddler-body .todo-now h2, .tc-tiddler-body .todo-done h2 {\n    display: flex;\n    margin-top: 0;\n    justify-content: space-between;\n}\n.tc-tiddler-body .todo-done h2 {\n    margin-top: 3rem;\n    font-weight: 300;\n}\n&lt;/style&gt;",
+            "title": "Cards Manager",
+            "tags": "Cardy",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181013192737679",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/FlippyCards/icon": {
+            "created": "20180425211353620",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\" viewBox=\"0 0 128 128\"&gt;&lt;path d=\"M108 19.1L2 8v90l106-11.1V19.1z\"/&gt;&lt;path d=\"M100 26.6L12 18v70l88-8.6V26.6z\" fill=\"#fff\"/&gt;&lt;g&gt;&lt;path d=\"M126 39.1L20 28v90l106-11.1V39.1z\"/&gt;&lt;path d=\"M118 46.6L30 38v70l88-8.6V46.6z\" fill=\"#fff\"/&gt;&lt;/g&gt;&lt;/svg&gt;",
+            "title": "$:/plugins/telmiger/FlippyCards/icon",
+            "tags": "$:/tags/Image",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180506200023124"
+        }
+    }
+}</pre>
+</div>
+<div author="Thomas Elmiger" core-version="&gt;=5.1.17" created="20181215221709312" description="ReaderMode – a nice, clean reading experience" list="readme license support" modified="20181215221734512" name="ReaderMode" plugin-type="plugin" source="https://tid.li/tw5/plugins.html" title="$:/plugins/telmiger/ReaderMode" type="application/json" version="0.5.14">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/telmiger/ReaderMode/support": {
+            "created": "20181215220633595",
+            "text": "{{$:/plugins/telmiger/support}}",
+            "title": "$:/plugins/telmiger/ReaderMode/support",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181215220839709",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/language/Buttons/ActivateReaderMode/Caption": {
+            "created": "20181215164958513",
+            "creator": "Thomas Elmiger",
+            "text": "Reader mode",
+            "title": "$:/language/Buttons/ActivateReaderMode/Caption",
+            "tags": "",
+            "modified": "20181215200024390",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/language/Buttons/ActivateReaderMode/Hint": {
+            "created": "20181215165252705",
+            "creator": "Thomas Elmiger",
+            "text": "Activate reader mode",
+            "title": "$:/language/Buttons/ActivateReaderMode/Hint",
+            "tags": "",
+            "modified": "20181217212618266",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/language/Buttons/ReaderMode/Caption": {
+            "created": "20181215165515464",
+            "creator": "Thomas Elmiger",
+            "text": "Toggle reader mode",
+            "title": "$:/language/Buttons/ReaderMode/Caption",
+            "tags": "",
+            "modified": "20181215194601904",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/language/Buttons/ReaderMode/Hint": {
+            "created": "20181215165354070",
+            "creator": "Thomas Elmiger",
+            "text": "Switch off reader mode",
+            "title": "$:/language/Buttons/ReaderMode/Hint",
+            "tags": "",
+            "modified": "20181215194545091",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/ReaderMode/icon": {
+            "created": "20181215220238671",
+            "text": "{{$:/plugins/telmiger/ReaderMode/images/reader-button}}",
+            "title": "$:/plugins/telmiger/ReaderMode/icon",
+            "tags": "",
+            "modified": "20181215220350311"
+        },
+        "$:/plugins/telmiger/ReaderMode/images/reader-button": {
+            "created": "20181215155845743",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;svg class=\"tc-image-reader-mode-button tc-image-button\" width=\"22pt\" height=\"22pt\" viewBox=\"0 0 128 128\"&gt;\n&lt;path d=\"M8 0a8 8 0 0 0-8 8v112a8 8 0 0 0 8 8h112a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8H8zm26 16a8 8 0 0 0-8 8v80a8 8 0 0 0 8 8h60a8 8 0 0 0 8-8V24a8 8 0 0 0-8-8H24z\" fill-rule=\"evenodd\"/&gt;\n&lt;/svg&gt;",
+            "title": "$:/plugins/telmiger/ReaderMode/images/reader-button",
+            "tags": "$:/tags/Image",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181215205908724"
+        },
+        "$:/plugins/telmiger/ReaderMode/license": {
+            "created": "20181215220419188",
+            "text": "`Reader Mode is published under the MIT License.`\n\n!!! Reader Mode\nThe content of $:/plugins/telmiger/ReaderMode is&lt;br&gt;\nCopyright (c), Thomas Elmiger, https://thomas-elmiger.ch\n\n!!! The MIT License (MIT)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "title": "$:/plugins/telmiger/ReaderMode/license",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181215220555310",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/ReaderMode/readme": {
+            "created": "20181215214533889",
+            "creator": "Thomas Elmiger",
+            "text": "!! Reader Mode\n\n''Display the story river as a flow of content, without any meta info or functions. A nice, clean document for reading.''\n\nTo support the impression of one single frame, the background of the story is set to the same colour as the tiddler background.\n\nThis plugin provides two buttons:\n\n* The ''Reader mode button'' {{$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle}} to hide elements of your choice (see configuration below) that usually separate tiddlers in the story: \n** tiddler frame, border and shadow\n** title and buttons (tiddler controls)\n** subtitle (date and author/modifier)\n** tags\n* The ''Drag mode button'' {{$:/plugins/telmiger/ReaderMode/ui/Buttons/drag}} to enable and disable dragging of elements within/from the story: \n** drag an element within the story to positions nearby \n** drag from story to sidebar or from sidebar to story to bring elements to distant positions\n** elements are always moved (not duplicated)\n\n!!! Button configuration\n\nWhere to show the Drag Mode button: &lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/drag\" tag=\"$:/tags/TopLeftBar\"&gt; Top left bar&lt;/$checkbox&gt;&lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/drag\" tag=\"$:/tags/TopRightBar\"&gt; Top right bar&lt;/$checkbox&gt;&lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/drag\" tag=\"$:/tags/PageControls\"&gt; Page controls&lt;/$checkbox&gt;\n\nWhere to show the Reader Mode button: &lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle\" tag=\"$:/tags/TopLeftBar\"&gt; Top left bar&lt;/$checkbox&gt;&lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle\" tag=\"$:/tags/TopRightBar\"&gt; Top right bar&lt;/$checkbox&gt;&lt;br&gt;\n&lt;$checkbox tiddler=\"$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle\" tag=\"$:/tags/PageControls\"&gt; Page controls&lt;/$checkbox&gt;\n\n\n!!! Story configuration\n\nBy default, the button {{$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle}} hides/shows tiddler titles and subtitles (author and timestamp) via CSS. This way they are still present in the HTML code. Tiddler controls are displayed much smaller.\n\nAdditionally you can exclude elements from being rendered at all in the next section.\n\n!!!! Exclude from rendering\n\n&lt;$list filter=\"[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!title[$:/core/ui/ViewTemplate/body]!list[$:/plugins/telmiger/ReaderMode/blocked]]\"&gt;\n&lt;$checkbox tiddler=\"$:/temp/ReaderMode/dummy\" field=&lt;&lt;currentTiddler&gt;&gt; checked=\"YES\" unchecked=\"NO\" default=\"NO\" actions=\"\"\"&lt;$action-listops $tiddler=\"$:/plugins/telmiger/ReaderMode/blocked\" $subfilter=&lt;&lt;currentTiddler&gt;&gt; /&gt;&lt;$action-deletetiddler $tiddler=\"$:/temp/ReaderMode/dummy\"/&gt;\"\"\"&gt; &lt;$text text={{!!title}}/&gt;&lt;/$checkbox&gt;&lt;br&gt;\n&lt;/$list&gt;\n\n---\n\n&lt;$list filter=\"[all[shadows+tiddlers]list[$:/plugins/telmiger/ReaderMode/blocked]]\"&gt;\n&lt;$wikify name=\"unblock\" text=\"-&lt;&lt;currentTiddler&gt;&gt;\"&gt;\n&lt;$checkbox  tiddler=\"$:/temp/ReaderMode/dummy\" field=&lt;&lt;currentTiddler&gt;&gt; checked=\"YES\" unchecked=\"NO\" default=\"YES\" actions=\"\"\"&lt;$action-listops $tiddler=\"$:/plugins/telmiger/ReaderMode/blocked\" $subfilter=&lt;&lt;unblock&gt;&gt; /&gt;&lt;$action-deletetiddler $tiddler=\"$:/temp/ReaderMode/dummy\"/&gt;\"\"\"&gt; &lt;$text text={{!!title}}/&gt;&lt;/$checkbox&gt;&lt;br&gt;\n&lt;/$wikify&gt;\n&lt;/$list&gt;\n\nExcluding elements from rendering is possible using a modified [[view template|$:/core/ui/ViewTemplate]] and a [[list of blocked elements|$:/plugins/telmiger/ReaderMode/blocked]].",
+            "title": "$:/plugins/telmiger/ReaderMode/readme",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190202094330750"
+        },
+        "$:/plugins/telmiger/ReaderMode/story.css": {
+            "text": "/*\n** Reader Mode\n** (c) Thomas Elmiger\n** \"\"\" \n*/\n\n\nbody .tc-story-river {\n   background-color: &lt;&lt;colour tiddler-background&gt;&gt;;\n}\n\nbody .tc-tiddler-view-frame,\nbody .tc-tiddler-frame .tc-reveal.tc-tiddler-body {\n   margin-top: 0;\n   margin-bottom: 0;\n   padding-top: 0;\n   padding-bottom: 0;\n   border: 0;\n   box-shadow: none;\n   min-height: 1em;\n}\n\nbody .tc-reveal.tc-tiddler-body:first-child {\n    margin-top: 2rem;\n}\n\nbody .tc-tiddler-view-frame .tc-tiddler-body &gt; section:first-child,\nbody .tc-tiddler-view-frame .tc-tiddler-body &gt; header:first-child,\nbody .tc-tiddler-view-frame .tc-tiddler-body &gt; h1:first-child,\nbody .tc-tiddler-view-frame .tc-tiddler-body &gt; h2:first-child {\n    margin-top: 4rem;\n}\n\n\n/* hide tiddler title */\n\nbody .tc-tiddler-view-frame .tc-title,\nbody .tc-tiddler-view-frame .tc-subtitle {\n   display: none;\n}\n\nbody .tc-tiddler-view-frame .tc-tiddler-controls {\n   font-size: 1rem;\n   position: absolute;\n   right: 2rem;\n   margin-top: 2.5rem;\n}\n\n\n/* topbar button */\n\n.tc-topbar button.reader-mode {\n   background-color: white;\n}\n\n.tc-topbar button.reader-mode svg {\n   fill: black;\n}\n\n\n/* End \"\"\" */",
+            "title": "$:/plugins/telmiger/ReaderMode/story.css",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190128214101432",
+            "creator": "Thomas Elmiger",
+            "created": "20181215151220476"
+        },
+        "$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle": {
+            "created": "20181215155225793",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$set name=\"qualstate\" value=\"$:/state/ReaderMode\"&gt;\n&lt;$reveal type=\"nomatch\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;$button set=&lt;&lt;qualstate&gt;&gt; setTo=\"active\" tooltip={{$:/language/Buttons/ActivateReaderMode/Hint}} aria-label={{$:/language/Buttons/ActivateReaderMode/Caption}} class=\"tc-btn-invisible reader-mode\"&gt;\n&lt;$action-listops $tiddler=\"$:/plugins/telmiger/ReaderMode/story.css\" $tags=\"$:/tags/Stylesheet -$:/tagremoved/Stylesheet\"/&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\"&gt;\n{{$:/plugins/telmiger/ReaderMode/images/reader-button}}\n&lt;/$list&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;&lt;$text text={{$:/language/Buttons/ActivateReaderMode/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;$button set=&lt;&lt;qualstate&gt;&gt; setTo=\"inactive\" tooltip={{$:/language/Buttons/ReaderMode/Hint}} aria-label={{$:/language/Buttons/ReaderMode/Caption}} class=\"tc-btn-invisible reader-mode tc-selected\"&gt;\n&lt;$action-listops $tiddler=\"$:/plugins/telmiger/ReaderMode/story.css\" $tags=\"$:/tagremoved/Stylesheet -$:/tags/Stylesheet\"/&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\"&gt;\n{{$:/plugins/telmiger/ReaderMode/images/reader-button}}\n&lt;/$list&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;&lt;$text text={{$:/language/Buttons/ReaderMode/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;",
+            "title": "$:/plugins/telmiger/ReaderMode/ui/Buttons/toggle",
+            "tags": "$:/tags/PageControls",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190202100227843",
+            "description": "{{$:/language/Buttons/ActivateReaderMode/Hint}}",
+            "caption": "{{$:/plugins/telmiger/ReaderMode/images/reader-button}} {{$:/language/Buttons/ActivateReaderMode/Caption}}"
+        },
+        "$:/plugins/telmiger/support": {
+            "created": "20181103150753927",
+            "text": "!! Support the Author\n\n''Hi!'' I’m Thomas, the author of [[tid.li/tw5/plugins.html|https://tid.li/tw5/plugins.html]]. Feedback is always welcome, as well as funding for maintenance, support and new projects :)\n\n---\n\n!!! One Time Support\n\nIf using my plugins just makes you happy, consider a one time payment via ~PayPal to reward the effort:\n\nhttps://www.paypal.me/telmiger\n\n---\n\n!!! Permanent Support\n\nIf my tools make you more productive or save you time in your job or your everyday life, you can support me as a Patron: \n\nhttps://www.patreon.com/telmiger\n\n---\n\n!!! Thank You\n\nSubstantial parts of my availabe time go to the deveopment of useful plugins for [[TiddlyWiki|https://tiddlywiki.com/]]. – Many others do the same and I would like to thank them all, especially [[Jeremy Ruston|https://tiddlywiki.com/#JeremyRuston]] and all the active members of the community!\n\n//Hereby I promise to share future revenues (if any) with other developers who’s works I use or who inspired me.//\n\nIf you like my work, I would be very happy to hear from you.\n\n''Thank you very much for your support!''&lt;br&gt;\n//Thomas//\n\nhttps://thomas-elmiger.ch",
+            "title": "$:/plugins/telmiger/support",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20181104091650389",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/core/ui/ViewTemplate": {
+            "created": "20190114200812402",
+            "creator": "Thomas Elmiger",
+            "text": "\\define drop-actions()\n&lt;$action-listops $tiddler=\"$:/StoryList\" $subfilter=\"+[insertbefore:currentTiddler&lt;actionTiddler&gt;]\"/&gt;\n\\end\n\\define drop-below-actions()\n&lt;$action-listops $tiddler=\"$:/StoryList\" $subfilter=\"[&lt;actionTiddler&gt;] +[putafter&lt;currentTiddler&gt;]\"/&gt;\n\\end\n\\define frame-classes()\ntc-tiddler-frame tc-tiddler-view-frame $(missingTiddlerClass)$ $(shadowTiddlerClass)$ $(systemTiddlerClass)$ $(tiddlerTagClasses)$ $(userClass)$\n\\end\n\\define folded-state()\n$:/state/folded/$(currentTiddler)$\n\\end\n&lt;$vars storyTiddler=&lt;&lt;currentTiddler&gt;&gt; tiddlerInfoState=&lt;&lt;qualify \"$:/state/popup/tiddler-info\"&gt;&gt; userClass={{!!class}}&gt;&lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;div data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt; data-tags={{!!tags}} class=&lt;&lt;frame-classes&gt;&gt;&gt;&lt;$set name=\"qualstate\" value=\"$:/state/ReaderMode-Drag\"&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;div style=\"position: relative;\"&gt;&lt;$droppable actions=&lt;&lt;drop-actions&gt;&gt;&gt;&lt;div class=\"tc-droppable-placeholder\"&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;div class=\"my-story-drag-handle\"&gt;&lt;$draggable tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$set name=\"includeFilter\" filter=\"[[$:/state/ReaderMode]get[text]removeprefix[active]]\" value=\"[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!list[$:/plugins/telmiger/ReaderMode/blocked]!has[draft.of]]\" emptyValue=\"[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!has[draft.of]]\"&gt;&lt;$list filter=&lt;&lt;includeFilter&gt;&gt; variable=\"listItem\"&gt;\n&lt;div&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/div&gt;&lt;/$list&gt;&lt;/$set&gt;&lt;/$draggable&gt;&lt;/div&gt;&lt;/$droppable&gt;&lt;/div&gt;&lt;/$reveal&gt;\n&lt;$reveal type=\"nomatch\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;$set name=\"includeFilter\" filter=\"[[$:/state/ReaderMode]get[text]removeprefix[active]]\" value=\"[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!list[$:/plugins/telmiger/ReaderMode/blocked]!has[draft.of]]\" emptyValue=\"[all[shadows+tiddlers]tag[$:/tags/ViewTemplate]!has[draft.of]]\"&gt;&lt;$list filter=&lt;&lt;includeFilter&gt;&gt; variable=\"listItem\"&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$list&gt;\n&lt;/$set&gt;&lt;/$reveal&gt;&lt;/$set&gt;\n&lt;/div&gt;&lt;/$tiddler&gt;&lt;/$vars&gt;",
+            "title": "$:/core/ui/ViewTemplate",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190121064658252"
+        },
+        "$:/plugins/telmiger/ReaderMode/blocked": {
+            "created": "20190120220119635",
+            "creator": "Thomas Elmiger",
+            "title": "$:/plugins/telmiger/ReaderMode/blocked",
+            "list": "$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/subtitle",
+            "modified": "20190121065430957",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/ReaderMode/ui/Buttons/drag": {
+            "created": "20190116192223885",
+            "creator": "Thomas Elmiger",
+            "text": "&lt;$set name=\"qualstate\" value=\"$:/state/ReaderMode-Drag\"&gt;\n&lt;$reveal type=\"nomatch\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;$button set=&lt;&lt;qualstate&gt;&gt; setTo=\"active\" tooltip={{$:/language/Buttons/ActivateDragMode/Hint}} aria-label={{$:/language/Buttons/ActivateDragMode/Caption}} class=\"tc-btn-invisible reader-mode\"&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\"&gt;\n{{$:/plugins/telmiger/ReaderMode/images/drag-button}}\n&lt;/$list&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;&lt;$text text={{$:/language/Buttons/ActivateDragMode/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\"match\" state=&lt;&lt;qualstate&gt;&gt; text=\"active\"&gt;\n&lt;$button set=&lt;&lt;qualstate&gt;&gt; setTo=\"inactive\" tooltip={{$:/language/Buttons/DragMode/Hint}} aria-label={{$:/language/Buttons/DragMode/Caption}} class=\"tc-btn-invisible reader-mode tc-selected\"&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\"&gt;\n{{$:/plugins/telmiger/ReaderMode/images/drag-button}}\n&lt;/$list&gt;\n&lt;$list filter=\"[&lt;tv-config-toolbar-text&gt;prefix[yes]]\"&gt;\n&lt;span class=\"tc-btn-text\"&gt;&lt;$text text={{$:/language/Buttons/DragMode/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;",
+            "title": "$:/plugins/telmiger/ReaderMode/ui/Buttons/drag",
+            "tags": "$:/tags/TopRightBar $:/tags/PageControls",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190202100313384",
+            "description": "{{$:/language/Buttons/ActivateDragMode/Hint}}",
+            "caption": "{{$:/plugins/telmiger/DragMode/images/reader-button}} {{$:/language/Buttons/ActivateReaderMode/Caption}}"
+        },
+        "$:/plugins/telmiger/ReaderMode/images/drag-button": {
+            "text": "&lt;svg class=\"tc-image-reader-mode-button tc-image-button\" width=\"22pt\" height=\"22pt\" viewBox=\"0 0 22 22\"&gt;\n&lt;path d=\"M15.3 4c.4.4.4 1.2 0 1.6-.5.5-1.3.5-1.7 0l-1.4-1.3v5.5h5.5l-1.3-1.3c-.5-.5-.5-1.3 0-1.7.4-.5 1.2-.5 1.7 0l3.4 3.4c.4.4.4 1.2 0 1.7L18 15.3c-.5.4-1.3.4-1.7 0-.5-.5-.5-1.3 0-1.7l1.3-1.4h-5.5v5.5l1.3-1.3c.5-.5 1.3-.5 1.7 0 .5.4.5 1.2 0 1.7l-3.4 3.4c-.4.4-1.2.4-1.7 0L6.7 18c-.4-.5-.4-1.3 0-1.7.5-.5 1.3-.5 1.7 0l1.4 1.3v-5.5H4.3l1.3 1.3c.5.5.5 1.3 0 1.7-.4.5-1.2.5-1.7 0L.5 11.8c-.4-.4-.4-1.2 0-1.7L4 6.7c.5-.4 1.3-.4 1.7 0 .5.5.5 1.3 0 1.7L4.3 9.8h5.5V4.3L8.5 5.6c-.5.5-1.3.5-1.7 0-.5-.4-.5-1.2 0-1.7L10.2.5c.4-.4 1.2-.4 1.7 0L15.3 4z\"/&gt;\n&lt;/svg&gt;\n",
+            "title": "$:/plugins/telmiger/ReaderMode/images/drag-button",
+            "tags": "$:/tags/Image",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190116200342893",
+            "creator": "Thomas Elmiger",
+            "created": "20190116200203022"
+        },
+        "$:/language/Buttons/ActivateDragMode/Caption": {
+            "text": "Drag mode",
+            "title": "$:/language/Buttons/ActivateDragMode/Caption",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190116201209884",
+            "creator": "Thomas Elmiger",
+            "created": "20190116201151553"
+        },
+        "$:/language/Buttons/ActivateDragMode/Hint": {
+            "text": "Activate drag mode",
+            "title": "$:/language/Buttons/ActivateDragMode/Hint",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190116201135153",
+            "creator": "Thomas Elmiger",
+            "created": "20190116201118706"
+        },
+        "$:/language/Buttons/DragMode/Caption": {
+            "text": "Toggle drag mode",
+            "title": "$:/language/Buttons/DragMode/Caption",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190116201107805",
+            "creator": "Thomas Elmiger",
+            "created": "20190116201038233"
+        },
+        "$:/language/Buttons/DragMode/Hint": {
+            "text": "Switch off drag mode",
+            "title": "$:/language/Buttons/DragMode/Hint",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190116201029632",
+            "creator": "Thomas Elmiger",
+            "created": "20190116200942999"
+        }
+    }
+}</pre>
+</div>
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Shows a tiddler preview when hovering internal links" documentation="https://tobibeer.github.io/tw5-preview" list="readme config" plugin-type="plugin" requires="[[tobibeer/appear|http://tobibeer.github.io/tw5-plugins/#appear]]" revision="0" source="https://github.com/tobibeer/tw5-preview" title="$:/plugins/tobibeer/preview" type="application/json" version="0.5.6">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/tobibeer/preview/config": {
+            "title": "$:/plugins/tobibeer/preview/config",
+            "text": "\\define default()\r\n&lt;dt&gt;$(defaults)$$(option)$&lt;/dt&gt;\r\n&lt;dd&gt;\r\n//{{$:/plugins/tobibeer/preview/lingo/$(option)$}}&lt;$list\r\nfilter=\"[[$(option)$]prefix[template]]\"&gt;\r\n{{$(defaults)$$(option)$}}&lt;/$list&gt;://&lt;br&gt;\r\n&lt;$edit-text tag=input tiddler=\"$(defaults)$$(option)$\"/&gt;\r\n&lt;/dd&gt;\r\n\\end\n\n&lt;dl class=\"preview-defaults\"&gt;\r\n&lt;$vars defaults=\"$:/plugins/tobibeer/preview/defaults/\"&gt;\r\n&lt;$list filter=\"[all[tiddlers+shadows]removeprefix&lt;defaults&gt;sort[title]]\" variable=\"option\"&gt;\r\n&lt;&lt;default&gt;&gt;\r\n&lt;/$list&gt;\r\n&lt;/$vars&gt;\r\n&lt;/dl&gt;\r\n&lt;style&gt;.preview-defaults input {width:90%;}&lt;/style&gt;"
+        },
+        "$:/plugins/tobibeer/preview/lingo/keys": {
+            "title": "$:/plugins/tobibeer/preview/lingo/keys",
+            "text": "modifier keys to trigger popup directly on-hover (ctrl, alt+shift, meta, etc...)"
+        },
+        "$:/plugins/tobibeer/preview/defaults/keys": {
+            "title": "$:/plugins/tobibeer/preview/defaults/keys",
+            "text": "CTRL"
+        },
+        "$:/plugins/tobibeer/preview/lingo/delay": {
+            "title": "$:/plugins/tobibeer/preview/lingo/delay",
+            "text": "delay popup for this many milliseconds"
+        },
+        "$:/plugins/tobibeer/preview/defaults/delay": {
+            "title": "$:/plugins/tobibeer/preview/defaults/delay",
+            "text": "1500"
+        },
+        "$:/plugins/tobibeer/preview/lingo/class": {
+            "title": "$:/plugins/tobibeer/preview/lingo/class",
+            "text": "css classes applied to the popup"
+        },
+        "$:/plugins/tobibeer/preview/defaults/class": {
+            "title": "$:/plugins/tobibeer/preview/defaults/class",
+            "text": "tc-popup-keep"
+        },
+        "$:/plugins/tobibeer/preview/lingo/not": {
+            "title": "$:/plugins/tobibeer/preview/lingo/not",
+            "text": "no preview for links inside elements with these classes"
+        },
+        "$:/plugins/tobibeer/preview/defaults/not": {
+            "title": "$:/plugins/tobibeer/preview/defaults/not",
+            "text": "tc-drop-down tc-sidebar-scrollable tc-topbar tc-tiddler-title"
+        },
+        "$:/plugins/tobibeer/preview/lingo/exclude": {
+            "title": "$:/plugins/tobibeer/preview/lingo/exclude",
+            "text": "no preview for links to tiddlers matching this filter"
+        },
+        "$:/plugins/tobibeer/preview/defaults/exclude": {
+            "title": "$:/plugins/tobibeer/preview/defaults/exclude",
+            "text": "[is[system]] [all[shadows]] [!has[text]]"
+        },
+        "$:/plugins/tobibeer/preview/lingo/template": {
+            "title": "$:/plugins/tobibeer/preview/lingo/template",
+            "text": "the preview template"
+        },
+        "$:/plugins/tobibeer/preview/defaults/template": {
+            "title": "$:/plugins/tobibeer/preview/defaults/template",
+            "text": "$:/plugins/tobibeer/preview/template"
+        },
+        "$:/plugins/tobibeer/preview/lingo/open": {
+            "title": "$:/plugins/tobibeer/preview/lingo/open",
+            "text": "view at ''&lt;&lt;WIKI&gt;&gt;''"
+        },
+        "$:/plugins/tobibeer/preview/keyboard.js": {
+            "title": "$:/plugins/tobibeer/preview/keyboard.js",
+            "text": "/*\\\r\ntitle: $:/plugins/tobibeer/preview/keyboard.js\r\ntype: application/javascript\r\nmodule-type: utils\r\n\r\nFixes $:/core/modules/utils/dom/keyboard.js by providing an alternative.\r\nDo not use as an API, let's fix the core.\r\n\r\n@preserve\r\n\\*/\n(function(){\"use strict\";var e={BACKSPACE:8,TAB:9,ENTER:13,ESCAPE:27,PAGEUP:33,PAGEDOWN:34,END:35,HOME:36,LEFT:37,UP:38,RIGHT:39,DOWN:40,INSERT:45,DELETE:46};exports.parseKeyDescriptorTB=function(t){var l,r,y,s=t.toUpperCase().split(\"+\"),K={keyCode:null,shiftKey:false,altKey:false,ctrlKey:false};for(y=0;y&lt;s.length;y++){l=false;r=s[y];if(r.substr(0,1)===\"!\"){l=true;r=r.substr(1)}if(r===\"CTRL\"){K.ctrlKey=l?null:true}else if(r===\"SHIFT\"){K.shiftKey=l?null:true}else if(r===\"ALT\"){K.altKey=l?null:true}else if(r===\"META\"){K.metaKey=l?null:true}else if(e[r]){K.keyCode=e[r]}else{K.keyCode=r.charCodeAt(0)}}return K};exports.checkKeyDescriptorTB=function(e,t){var l=!!t.metaKey;return(t.keyCode===null||e.keyCode===t.keyCode)&amp;&amp;(t.shiftKey===null?!e.shiftKey:e.shiftKey===t.shiftKey)&amp;&amp;(t.altKey===null?!e.altKey:e.altKey===t.altKey)&amp;&amp;(t.ctrlKey===null?!e.ctrlKey:e.ctrlKey===t.ctrlKey)&amp;&amp;(t.metaKey===null?!e.metaKey:e.metaKey===l)}})();",
+            "type": "application/javascript",
+            "module-type": "utils"
+        },
+        "$:/plugins/tobibeer/preview/link.js": {
+            "title": "$:/plugins/tobibeer/preview/link.js",
+            "text": "/*\\\r\ntitle: $:/plugins/tobibeer/preview/link.js\r\ntype: application/javascript\r\nmodule-type: startup\r\n\r\nEnhances the link widget for on-hover previews\r\n\r\n@preserve\r\n\\*/\n(function(){var e,t=require(\"$:/core/modules/widgets/link.js\").link,i=t.prototype.render,o=t.prototype.handleClickEvent;t.prototype.render=function(){i.apply(this,arguments);var t=this,o=this.wiki,p=this.domNodes[0],r=o.getTiddler(t.to),n=\"$:/plugins/tobibeer/preview/defaults/\",u=\"$:/temp/tobibeer/preview-\",l=$tw.utils.parseKeyDescriptorTB(o.getTextReference(n+\"keys\",\"\").toUpperCase()),s=o.getTextReference(n+\"delay\").toUpperCase(),a=function(e){var i=$tw.popup.popupInfo(e),p=i.popupLevel;return o.getTextReference(u+p)&amp;&amp;o.getTextReference(u+p+\"-tiddler\")===t.to?null:i},f=function(){var i,r=a(p);if(r){i=r.popupLevel;clearTimeout(t.previewTimeout);$tw.popup.cancel(i);i++;o.setText(u+i+\"-tiddler\",\"text\",null,t.to);if($tw.popup.findPopup(u+i)===-1){setTimeout(function(){$tw.popup.triggerPopup({domNode:p,title:u+i,wiki:o});e=0},50)}}},d=function(){var e,i,r=1,u=o.getTextReference(n+\"not\",\"\");if(u){$tw.utils.each(u.split(\" \"),function(e){var t=p;while(t&amp;&amp;r){if($tw.utils.hasClass(t,e)){r=0;return false}t=t.parentNode}})}if(r){i=o.getTextReference(n+\"exclude\",\"\");e=i?o.filterTiddlers(i):[];if(e.indexOf(t.to)&gt;=0){r=0}}return r};s=s!==undefined?parseInt(s):null;if(s!==null&amp;&amp;isNaN(s)){s=0}if(r){$tw.utils.addClass(p,\"tc-popup-handle\");$tw.utils.addClass(p,\"tc-popup-absolute\");[\"mouseover\",\"mouseout\"].forEach(function(i){p.addEventListener(i,function(o){var p=o||window.event;if(i===\"mouseover\"){if(d()){if(!p.keyCode){p.keyCode=0}if($tw.utils.checkKeyDescriptorTB(p,l)){if(!e){e=1;f()}}else if(s!==null){e=0;t.previewTimeout=setTimeout(f,s)}}}else{e=0;clearTimeout(t.previewTimeout)}})})}};t.prototype.handleClickEvent=function(){o.apply(this,arguments);clearTimeout(this.previewTimeout);$tw.popup.cancel(Math.max(0,$tw.popup.popupInfo(this.domNodes[0]).popupLevel))}})();",
+            "type": "application/javascript",
+            "module-type": "startup"
+        },
+        "$:/plugins/tobibeer/preview/popups": {
+            "title": "$:/plugins/tobibeer/preview/popups",
+            "tags": "$:/tags/PageTemplate",
+            "text": "\\define state(num)\n$:/temp/tobibeer/preview-$num$\n\\end\n\n\\define classes(num)\ntc-popup appear appear-block appear-reveal tc-preview-tiddler tc-preview-tiddler-$num$ $(default-classes)$\n\\end\n\n\\define level(num)\n&lt;$reveal tag=\"div\" type=\"popup\" state=&lt;&lt;state $num$&gt;&gt; class=&lt;&lt;classes $num$&gt;&gt;&gt;\n&lt;$tiddler tiddler={{$:/temp/tobibeer/preview-$num$-tiddler}}&gt;\n&lt;$transclude tiddler={{$:/plugins/tobibeer/preview/defaults/template}} mode=\"block\"/&gt;\n&lt;/$tiddler&gt;\n&lt;/$reveal&gt;\n\\end\n\n&lt;$vars default-classes={{$:/plugins/tobibeer/preview/defaults/class}}&gt;\n&lt;$list filter=\"1 2 3 4 5 6 7 8 9\"&gt;\n&lt;$macrocall $name=\"level\" num={{!!title}}/&gt;\n&lt;/$list&gt;\n&lt;/$vars&gt;"
+        },
+        "$:/plugins/tobibeer/preview/readme": {
+            "title": "$:/plugins/tobibeer/preview/readme",
+            "text": "The plugin $:/plugins/tobibeer/preview enhances the core &lt;&lt;x LinkWidget&gt;&gt; to display a preview of tiddlers when hovering an internal link.\n\n&lt;br&gt;\n\n; documentation / examples / demos...\r\n: http://tobibeer.github.io/tw5-plugins#preview"
+        },
+        "$:/plugins/tobibeer/preview/styles": {
+            "title": "$:/plugins/tobibeer/preview/styles",
+            "tags": "$:/tags/Stylesheet",
+            "text": ".tc-popup.tc-preview-tiddler{\r\n\tmax-width:600px;\r\n\twidth:100%;\r\n\tpadding:1em;\r\n}"
+        },
+        "$:/plugins/tobibeer/preview/template": {
+            "title": "$:/plugins/tobibeer/preview/template",
+            "text": "{{||$:/core/ui/ViewTemplate/tags}}\n\n&lt;$transclude mode=\"block\"/&gt;"
+        }
+    }
+}</pre>
 </div>
 <div created="20210613064833879" modified="20210613064845302" title="$:/SiteSubtitle">
 <pre>做过项目的总结</pre>
@@ -10189,16 +11070,19 @@ Error message and password prompt
 <div created="20210613065318896" modified="20210613065318896" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210613065039574" modified="20210613070047631" title="$:/state/sidebar">
+<div created="20210613065039574" modified="20210629170523352" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210613070049346" modified="20210613070049346" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210629152508662" modified="20210629152511177" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+</div>
+<div created="20210613070049346" modified="20210629155451475" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210613070051281" list="huntaway" modified="20210613070051281" title="$:/StoryList">
+<div created="20210629170815034" list="$:/ControlPanel $:/Import" modified="20210629170841473" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10322,6 +11206,16 @@ Error message and password prompt
 &gt; 引入了Mybatis-Plus，减少了重复劳动，提高工作效率
 * 系统整体模块调整浪费了较长时间
 &gt; 对整个系统的可扩展性有好处</pre>
+</div>
+<div created="20210629152409864" modified="20210629152536764" tags="" title="New Tiddler">
+<pre>&lt;$details summary="This should be open" open="yes"&gt;
+
+Content will be immediately visible if open is set to "yes".
+
+&lt;/$details&gt;</pre>
+</div>
+<div title="Untitled">
+<pre>http://tobibeer.github.io/tw5-plugins/#%24%3A%2Fplugins%2Ftobibeer%2Fpreview</pre>
 </div>
 
 
